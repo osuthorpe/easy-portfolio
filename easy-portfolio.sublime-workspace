@@ -1,0 +1,191 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pakc",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/sftp-config.json",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/loop-page.php",
+		"/Users/athorpe-macbook/Downloads/reverie/style.css",
+		"/Users/athorpe-macbook/Downloads/reverie/single.php",
+		"/Users/athorpe-macbook/Downloads/reverie/sidebar.php",
+		"/Users/athorpe-macbook/Downloads/reverie/searchform.php",
+		"/Users/athorpe-macbook/Downloads/reverie/search.php",
+		"/Users/athorpe-macbook/Downloads/reverie/screenshot.png",
+		"/Users/athorpe-macbook/Downloads/reverie/robots.txt",
+		"/Users/athorpe-macbook/Downloads/reverie/readme.txt",
+		"/Users/athorpe-macbook/Downloads/reverie/page.php",
+		"/Users/athorpe-macbook/Downloads/reverie/page-full.php",
+		"/Users/athorpe-macbook/Downloads/reverie/loop.php",
+		"/Users/athorpe-macbook/Downloads/reverie/loop-single.php",
+		"/Users/athorpe-macbook/Downloads/reverie/loop-search.php",
+		"/Users/athorpe-macbook/Downloads/reverie/loop-page.php",
+		"/Users/athorpe-macbook/Downloads/reverie/index.php",
+		"/Users/athorpe-macbook/Downloads/reverie/humans.txt",
+		"/Users/athorpe-macbook/Downloads/reverie/header.php",
+		"/Users/athorpe-macbook/Downloads/reverie/functions.php",
+		"/Users/athorpe-macbook/Downloads/reverie/footer.php",
+		"/Users/athorpe-macbook/Downloads/reverie/favicon.png",
+		"/Users/athorpe-macbook/Downloads/reverie/bbpress.php",
+		"/Users/athorpe-macbook/Downloads/reverie/comments.php",
+		"/Users/athorpe-macbook/Downloads/reverie/archive.php",
+		"/Users/athorpe-macbook/Downloads/reverie/404.php",
+		"/Users/athorpe-macbook/Library/Application Support/Sublime Text 2/Packages/SFTP/SFTP.sublime-settings",
+		"/Users/athorpe-macbook/Library/Application Support/Sublime Text 2/Packages/User/SFTP.sublime-settings",
+		"/Users/athorpe-macbook/Dropbox/webapps/CSS3-Builder/index.html",
+		"/Users/athorpe-macbook/Library/Application Support/Sublime Text 2/Packages/User/FTPSync.sublime-settings",
+		"/Users/athorpe-macbook/Library/Application Support/Sublime Text 2/Packages/FTPSync/ftpsync.sublime-settings"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.sftp":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 231.0,
+	"status_bar_visible": true
+}
