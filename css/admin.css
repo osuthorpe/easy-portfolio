@@ -1,0 +1,39 @@
+.column-title { 
+	width:15%; 
+}
+
+.column-description { 
+	width:15%; 
+}
+
+#menu-posts-portfolio .wp-menu-image {
+	background: transparent url('img/camera.png') no-repeat scroll center -18px !important;
+}
+
+#menu-posts-portfolio:hover .wp-menu-image {
+	background: transparent url('img/camera.png') no-repeat scroll center 6px !important;
+}
+
+#menu-posts-faq .wp-menu-image {
+	background: transparent url('img/question-white.png') no-repeat scroll center -18px !important;
+}
+
+#menu-posts-faq:hover .wp-menu-image {
+	background: transparent url('img/question-white.png') no-repeat scroll center 6px !important;
+}
+
+#menu-posts-testomonials .wp-menu-image {
+	background: transparent url('img/tick.png') no-repeat scroll center -18px !important;
+}
+
+#menu-posts-testomonials:hover .wp-menu-image {
+	background: transparent url('img/tick.png') no-repeat scroll center 6px !important;
+}
+
+#menu-posts-gear .wp-menu-image {
+	background: transparent url('img/gear--pencil.png') no-repeat scroll center -18px !important;
+}
+
+#menu-posts-gear:hover .wp-menu-image {
+	background: transparent url('img/gear--pencil.png') no-repeat scroll center 6px !important;
+}
