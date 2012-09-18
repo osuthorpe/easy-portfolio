@@ -1,26 +1,37 @@
 <?php
 
-/*-----------------------------------------
-      Include basic set-up functions
------------------------------------------*/
+//basic WP settings
+if( file_exists(get_template_directory().'/functions/basics.php') )
+	include_once(get_template_directory().'/functions/basics.php'); 
 
-include (TEMPLATEPATH . '/functions/basics.php'); //basic WP settings
-include (TEMPLATEPATH . '/functions/load-javascript.php'); //Load Javascript for theme
-include (TEMPLATEPATH . '/functions/post_types.php'); //adds custom post types
+//Load Javascript for theme
+if( file_exists(get_template_directory().'/functions/load-javascript.php') )
+	include_once(get_template_directory().'/functions/load-javascript.php');
 
+//adds custom post types
+if( file_exists(get_template_directory().'/functions/post_types.php') )
+	include_once(get_template_directory().'/functions/post_types.php');
+
+/* Bootstrap the Theme Options Framework */
+  
+if( file_exists(get_template_directory().'/options/options.php') )
+    include_once(get_template_directory().'/options/options.php');
+
+ /* Set up General Options */
+
+ if( file_exists(get_template_directory().'/options/theme-options.php') )
+    include_once(get_template_directory().'/options/theme-options.php');
 
 // Re-define meta box path and URL
-define( 'RWMB_URL', trailingslashit( get_stylesheet_directory_uri() . '/functions/meta-box' ) );
-define( 'RWMB_DIR', trailingslashit( TEMPLATEPATH . '/functions/meta-box' ) );
+define( 'RWMB_URL', trailingslashit( get_stylesheet_directory_uri() . '/meta-box' ) );
+define( 'RWMB_DIR', trailingslashit( STYLESHEETPATH . '/meta-box' ) );
 
 // Include the meta box script
-require_once RWMB_DIR . 'meta-box.php';
+if( file_exists(get_template_directory().'/meta-box/meta-box.php') )
+	include_once(get_template_directory().'/meta-box/meta-box.php');
 
-// Include the meta box definition
-include RWMB_DIR . 'meta-box-usage.php';
+// Include the meta box definition (the file where you define meta boxes, see `demo/demo.php`)
+if( file_exists(get_template_directory().'/meta-box/meta-box-usage.php') )
+	include_once(get_template_directory().'/meta-box/meta-box-usage.php');
 
-if ( !function_exists( 'optionsframework_init' ) ) {
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/functions/admin/' );
-	require_once dirname( __FILE__ ) . '/functions/admin/options-framework.php';
-}
 ?>
