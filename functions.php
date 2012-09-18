@@ -14,24 +14,24 @@ if( file_exists(get_template_directory().'/functions/post_types.php') )
 
 /* Bootstrap the Theme Options Framework */
   
-if( file_exists(get_template_directory().'/options/options.php') )
-    include_once(get_template_directory().'/options/options.php');
+if( file_exists(get_template_directory().'/functions/options/options.php') )
+    include_once(get_template_directory().'/functions/options/options.php');
 
  /* Set up General Options */
 
- if( file_exists(get_template_directory().'/options/theme-options.php') )
-    include_once(get_template_directory().'/options/theme-options.php');
+ if( file_exists(get_template_directory().'/functions/options/theme-options.php') )
+    include_once(get_template_directory().'/functions/options/theme-options.php');
 
 // Re-define meta box path and URL
-define( 'RWMB_URL', trailingslashit( get_stylesheet_directory_uri() . '/meta-box' ) );
-define( 'RWMB_DIR', trailingslashit( STYLESHEETPATH . '/meta-box' ) );
+define( 'RWMB_URL', trailingslashit( get_stylesheet_directory_uri() . '/functions/meta-box' ) );
+define( 'RWMB_DIR', trailingslashit( STYLESHEETPATH . '/functions/meta-box' ) );
 
 // Include the meta box script
-if( file_exists(get_template_directory().'/meta-box/meta-box.php') )
-	include_once(get_template_directory().'/meta-box/meta-box.php');
+if( file_exists(get_template_directory().'/functions/meta-box/meta-box.php') )
+	include_once(get_template_directory().'/functions/meta-box/meta-box.php');
 
 // Include the meta box definition (the file where you define meta boxes, see `demo/demo.php`)
-if( file_exists(get_template_directory().'/meta-box/meta-box-usage.php') )
-	include_once(get_template_directory().'/meta-box/meta-box-usage.php');
+if( file_exists(get_template_directory().'/functions/meta-box/meta-box-usage.php') )
+	include_once(get_template_directory().'/functions/meta-box/meta-box-usage.php');
 
 ?>
