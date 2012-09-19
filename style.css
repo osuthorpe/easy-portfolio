@@ -72,4 +72,7 @@ table {
 5.		Portolios
 -----------------------------------------------*/
 
-#galleria{height:320px}
+#galleria {
+	height:420px;
+	width:600px;
+}

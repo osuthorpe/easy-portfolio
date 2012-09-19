@@ -16,8 +16,11 @@ Galleria.addTheme({
     author: 'Galleria',
     css: 'galleria.classic.css',
     defaults: {
-        transition: 'slide',
+        transition: 'fade',
+        touchTransition: 'slide',
         thumbnails: false,
+        responsive: true,
+        autoplay: true,
 
         // set this to false if you want to show the caption all the time:
         _toggleInfo: true
