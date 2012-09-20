@@ -21,9 +21,10 @@ Galleria.addTheme({
         thumbnails: false,
         responsive: true,
         autoplay: true,
+        imageCrop: true,
 
         // set this to false if you want to show the caption all the time:
-        _toggleInfo: true
+        _toggleInfo: true,
     },
     init: function(options) {
 
