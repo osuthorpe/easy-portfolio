@@ -16,8 +16,9 @@ Galleria.addTheme({
     author: 'Galleria',
     css: 'galleria.classic.css',
     defaults: {
-        transition: 'fade',
+        transition: 'slide',
         touchTransition: 'slide',
+        fullscreenTransition: 'fade',
         thumbnails: false,
         responsive: true,
         autoplay: true,
@@ -31,24 +32,35 @@ Galleria.addTheme({
         Galleria.requires(1.28, 'This version of Classic theme requires Galleria 1.2.8 or later');
 
         // add some elements
-        this.addElement('info-link','info-close');
+        this.addElement("controls","play","fullscreen"),
         this.append({
-            'info' : ['info-link','info-close']
+            container : "controls",
+            controls : ["fullscreen", "play"]
         });
 
         // cache some stuff
         var info = this.$('info-link,info-close,info-text'),
             touch = Galleria.TOUCH,
+            gallery = this,
+            fullscreen = this.$('fullscreen'),
             click = touch ? 'touchstart' : 'click';
 
         // show loader & counter with opacity
         this.$('loader,counter').show().css('opacity', 0.4);
 
+        this.bind("fullscreen_enter", function() {
+            fullscreen.addClass('open');
+        });
+
+        this.bind("fullscreen_exit", function() {
+            fullscreen.removeClass('open');
+        });
+
         // some stuff for non-touch browsers
         if (! touch ) {
             this.addIdleState( this.get('image-nav-left'), { left:-50 });
             this.addIdleState( this.get('image-nav-right'), { right:-50 });
-            this.addIdleState( this.get('counter'), { opacity:0 });
+            this.addIdleState( this.get('counter'), { opacity:1 });
         }
 
         // toggle info
@@ -74,6 +86,10 @@ Galleria.addTheme({
         this.bind('loadfinish', function(e) {
             this.$('loader').fadeOut(200);
         });
+
+        fullscreen.click(function() {
+            gallery.toggleFullscreen();
+        })
     }
 });
 

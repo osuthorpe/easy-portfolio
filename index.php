@@ -40,7 +40,6 @@
 						echo "<img src='{$src}' data-title='{$title}' data-description='{$title}'>";
 				} ?>
 			</div>
-
 			<script>
 				Galleria.loadTheme('<?php echo get_template_directory_uri()."/js/themes/classic/galleria.classic.js" ?>');
 				Galleria.run('#galleria');

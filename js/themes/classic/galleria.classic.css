@@ -5,6 +5,7 @@
 .galleria-container {
     position: relative;
     overflow: hidden;
+    background: #fff;
 }
 .galleria-container img {
     -moz-user-select: none;
@@ -14,9 +15,9 @@
 .galleria-stage {
     position: absolute;
     top: 0px;
-    bottom: 0px;
-    left: 10px;
-    right: 10px;
+    bottom: 30px;
+    left: 0px;
+    right: 0px;
     overflow:hidden;
 }
 .galleria-counter {
@@ -160,4 +161,20 @@
 .galleria-image-nav-right {
     background-image: url(classic-map.png);
     background-repeat: no-repeat;
+}
+
+.galleria-controls {
+    height: 30px;
+    width: 100%;
+    background: #000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.galleria-fullscreen {
+    width: 30px;
+    height: 30px;
+    background: #fff;
 }
