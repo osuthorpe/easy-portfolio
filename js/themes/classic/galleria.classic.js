@@ -32,16 +32,16 @@ Galleria.addTheme({
         Galleria.requires(1.28, 'This version of Classic theme requires Galleria 1.2.8 or later');
 
         // add some elements
-        this.addElement("controls","play","fullscreen","next","previous","count",'info','info-link','info-close'),
+        this.addElement("controls","play","fullscreen","next","previous","count",'info-link','more'),
         this.append({
-            container : "controls",
-            controls : ["fullscreen","previous","play","next","count","info"],
-            count : 'counter',
-            info : ['info-link','info-close']
+            container : ["controls","more"],
+            controls : ["fullscreen","previous","play","next","count","info-link"],
+            count : 'counter'
         });
 
         // cache some stuff
-        var info = this.$('info-link,info-close,info-text'),
+        var info = this.$('info-link'),
+            more = this.$('more'),
             touch = Galleria.TOUCH,
             gallery = this,
             fullscreen = this.$('fullscreen'),
@@ -93,6 +93,14 @@ Galleria.addTheme({
                 gallery.next();
             });
 
+            info.click(function() {
+                $('.galleria-more').toggle(200);
+            });
+
+            more.click(function() {
+                $('.galleria-more').hide();
+            });
+
             this.attachKeyboard({
                 left: this.prev, // applies the native prev() function
                 right: this.next,
@@ -100,22 +108,15 @@ Galleria.addTheme({
             });
         }
 
-        // toggle info
-        if ( options._toggleInfo === true ) {
-            info.bind( click, function() {
-                info.toggle();
-            });
-        } else {
-            info.show();
-            this.$('info-link, info-close').hide();
-        }
-
         this.bind('loadstart', function(e) {
             if (!e.cached) {
                 this.$('loader').show().fadeTo(200, 0.4);
             }
 
-            this.$('info').toggle( this.hasInfo() );
+            var imgData = this.getData(),
+                desc = "<strong>" + imgData.title + "</strong>" + "<p>" + imgData.description + "</p>";
+
+            $(".galleria-more").html(desc);
 
             $(e.thumbTarget).css('opacity',1).parent().siblings().children().css('opacity', 0.6);
         });

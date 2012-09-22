@@ -103,7 +103,7 @@ if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 104, 104, true ); // Main Thumbnail
     add_image_size( 'thumbnail', 75, 75, true ); //Gallery Thumbnail
-    add_image_size( 'portfolio-thumb', 200, 150, true); //Portfolio Menu Thumbnail
+    add_image_size( 'portfolio-thumb', 200, 200, true); //Portfolio Menu Thumbnail
 }
 
 /*-----------------------------------------

@@ -17,7 +17,7 @@
 		<?php wp_head(); ?>
 	</head>
 
-	<body>
+	<body <?php body_class($class); ?>>
 		<div id="header" class="left clear">
 			<?php if ( get_option('bk_logo') == '') { ?>
 			    <h1 class="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>

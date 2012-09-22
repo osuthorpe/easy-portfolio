@@ -11,6 +11,7 @@ function bk_load_all_scripts() {
         wp_register_script('jqueryui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js', false, '1.8.16');
         wp_register_script('lightbox', get_template_directory_uri().'/js/jquery.colorbox-min.js', 'jquery');
         wp_register_script('galleria', get_template_directory_uri().'/js/galleria-1.2.8.min.js', 'jquery');
+        wp_register_script('mosaic', get_template_directory_uri().'/js/mosaic.1.0.1.min.js', 'jquery');
 
         wp_enqueue_script('jquery');
         wp_enqueue_script('galleria');
@@ -35,7 +36,16 @@ function bk_jquery_scripts() {
 				});
 			});
 		</script>
-	<?php }
+
+	<?php } if (is_page_template('portfolios.php') && !is_admin() ) {
+        wp_enqueue_script('mosaic'); ?>
+
+        <script type="text/javascript">
+            jQuery(function($){
+                $('.fade').mosaic();
+            });
+        </script>
+    <?php }
 }
 
 add_action('wp_head', 'bk_jquery_scripts');
