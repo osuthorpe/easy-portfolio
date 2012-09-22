@@ -18,3 +18,10 @@
 	</head>
 
 	<body>
+		<div id="header" class="left clear">
+			<?php if ( get_option('bk_logo') == '') { ?>
+			    <h1 class="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+			<?php } else { ?>
+			    <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_option('bk_logo'); ?>" alt="<?php bloginfo( 'name' ); ?>"/></a>
+			<?php } ?>
+		</div>

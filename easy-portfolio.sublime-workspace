@@ -3,15 +3,83 @@
 	{
 		"selected_items":
 		[
+			[
+				"ga",
+				"galleria-play"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"thumbn",
+				"thumbnails"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"get_templ",
+				"get_template_directory_uri"
+			],
+			[
+				"wp_reg",
+				"wp_register_script"
+			],
+			[
+				"fun",
+				"functions"
+			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 1586,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 2253,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/themes/classic/galleria.classic.css",
+			"settings":
+			{
+				"buffer_size": 3945,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/themes/classic/galleria.classic.js",
+			"settings":
+			{
+				"buffer_size": 2926,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "functions/load-javascript.php",
+			"settings":
+			{
+				"buffer_size": 1224,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 27.0,
 		"selected_items":
 		[
 			[
@@ -56,7 +124,35 @@
 	},
 	"file_history":
 	[
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/style.scss",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/js/themes/classic/galleria.classic.js",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/header.php",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/js/GGS.min.js",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/functions/load-javascript.php",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/js/less-1.3.0.min.js",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/style.css",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/scss/style.scss",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/js/themes/classic/galleria.classic.css",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/js/themes/classic/classic-demo.html",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/js/themes/easy_theme/galleria.easy_theme.css",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/js/themes/easy_theme/galleria.easy_theme.js",
+		"/Users/athorpe-macbook/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/menu.php",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/functions.php",
+		"/Users/athorpe-macbook/Library/Application Support/Sublime Text 2/Packages/User/SFTP.errors.log",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/options/theme-options.php",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/footer.php",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/meta-box/meta-box-usage.php",
 		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/sftp-config.json",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/options/options.php",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/options/theme-option.php",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/options/theme-options-example.txt",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/options/README.md",
+		"/Users/athorpe-macbook/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/meta-box/readme.txt",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/index.php",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/library/js/scripts.js",
+		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/README.md",
 		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/loop-page.php",
 		"/Users/athorpe-macbook/Downloads/reverie/style.css",
 		"/Users/athorpe-macbook/Downloads/reverie/single.php",
@@ -90,7 +186,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -104,6 +200,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"<"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -121,8 +218,163 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "index.php",
+					"settings":
+					{
+						"buffer_size": 1586,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1509,
+								1509
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 194.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "style.css",
+					"settings":
+					{
+						"buffer_size": 2253,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2169,
+								2169
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 974.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/themes/classic/galleria.classic.css",
+					"settings":
+					{
+						"buffer_size": 3945,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3837,
+								3837
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2294.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/themes/classic/galleria.classic.js",
+					"settings":
+					{
+						"buffer_size": 2926,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2891,
+								2891
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 237.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "functions/load-javascript.php",
+					"settings":
+					{
+						"buffer_size": 1224,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								746,
+								746
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 44.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
