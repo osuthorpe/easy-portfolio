@@ -39,12 +39,6 @@ function bk_home_page_menu_args( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'bk_home_page_menu_args' );
 
-/*------------------------------
-    Custom Background Support
--------------------------------*/
-
-add_custom_background();
-
 add_editor_style();
 if ( ! isset( $content_width ) ) $content_width = 600;
 $GLOBALS['content_width'] = 600;

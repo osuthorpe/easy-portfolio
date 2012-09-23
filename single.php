@@ -12,11 +12,11 @@
 				<div id="post-<?php the_ID(); ?>" <?php post_class('single-content'); ?>>
 		        	<div class="single-image">
 		        		<?php if ( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) : ?>
-		                    <a href="<?php the_permalink(); ?>" ><?php the_post_thumbnail('blog'); ?></a>
+		                    <?php the_post_thumbnail('blog'); ?>
 		                <?php endif; ?>
 		            </div>
 		            <div class="title">
-		                <a href="<?php the_permalink(); ?>"><h2 class="entry-title"><?php the_title(); ?></h2></a>
+		                <h2 class="entry-title"><?php the_title(); ?></h2>
 		            </div>
 
 		            <div class="meta">

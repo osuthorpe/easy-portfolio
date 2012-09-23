@@ -2,7 +2,7 @@
 
 //basic WP settings
 if( file_exists(get_template_directory().'/functions/basics.php') )
-	include_once(get_template_directory().'/functions/basics.php'); 
+	include_once(get_template_directory().'/functions/basics.php');
 
 //Load Javascript for theme
 if( file_exists(get_template_directory().'/functions/load-javascript.php') )
@@ -13,7 +13,7 @@ if( file_exists(get_template_directory().'/functions/post_types.php') )
 	include_once(get_template_directory().'/functions/post_types.php');
 
 /* Bootstrap the Theme Options Framework */
-  
+
 if( file_exists(get_template_directory().'/functions/options/options.php') )
     include_once(get_template_directory().'/functions/options/options.php');
 
