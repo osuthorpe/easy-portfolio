@@ -104,6 +104,7 @@ if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
     set_post_thumbnail_size( 104, 104, true ); // Main Thumbnail
     add_image_size( 'thumbnail', 75, 75, true ); //Gallery Thumbnail
     add_image_size( 'portfolio-thumb', 200, 200, true); //Portfolio Menu Thumbnail
+    add_image_size('blog', 620, 9999, false); //Blog page image
 }
 
 /*-----------------------------------------

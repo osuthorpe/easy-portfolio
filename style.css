@@ -78,6 +78,14 @@ table {
   border-spacing: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+.right {
+  float: right;
+}
+
 /*-----------------------------------------------
 1.    Default Wordpress Styles
 -----------------------------------------------*/
@@ -112,14 +120,9 @@ table {
 2.    Structure
 -----------------------------------------------*/
 
-body {
-  overflow: hidden;
-}
-
 #wrapper {
   width: 960px;
   margin: 10px auto;
-  overflow: hidden;
 }
 
 #navigation {
@@ -381,7 +384,7 @@ body {
   overflow:hidden;
   width:200px;
   height:200px;
-  margin:0 10px 10px 0;
+  margin:0 7px 7px 0;
 }
 
 .mosaic-backdrop {
@@ -668,4 +671,48 @@ h3#reply-title {
 #respond .form-submit input {
   font-size:14px;
   width:auto
+}
+
+#blog-content {
+  width: 620px;
+  margin-right: 20px;
+  float: left;
+  display: block;
+}
+
+#blog-content .single-content {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #888888;
+  overflow: hidden;
+}
+
+#blog-content .single-content a {
+  color: #0099cc;
+}
+
+#blog-content .single-content h2.entry-title {
+  line-height: 1.7em;
+  font-size: 1.5em;
+  color: #000;
+  font-weight: bold;
+}
+
+#blog-content .single-content .meta {
+  font-size: 1em;
+  margin-bottom: 5px;
+  color: #a8a8a8;
+}
+
+#blog-content .single-content .content p {
+  line-height: 1.5em;
+  padding: 20px 0 5px 0;
+}
+
+#blog-content .single-content #nav-below {
+  margin-top: 20px;
+  overflow: hidden;
+}
+#blog-content .single-content .nav-previous {
+  float: left;
 }

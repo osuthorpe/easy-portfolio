@@ -7,11 +7,7 @@
 	</div>
 
 	<div id="main-content">
-		<?php $args = array( 'post_type' => 'portfolio' );
-		$loop = new WP_Query( $args );
-		while ( $loop->have_posts() ) : $loop->the_post();
-		$front = get_post_meta( get_the_ID(), 'bk_is_front_page', true );
-		if ($front === 'yes') { ?>
+		 <?php while ( have_posts() ) : the_post(); ?>
 			<div id='galleria'>
 	            <?php
 					global $wpdb, $post;
@@ -46,7 +42,6 @@
 				Galleria.loadTheme('<?php echo get_template_directory_uri()."/js/themes/classic/galleria.classic.js" ?>');
 				Galleria.run('#galleria');
 	    	</script>
-	    <?php } ?>
 		<?php endwhile; ?>
 	</div>
 
