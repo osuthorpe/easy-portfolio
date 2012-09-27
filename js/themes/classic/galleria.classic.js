@@ -52,58 +52,58 @@ Galleria.addTheme({
 
         // some stuff for non-touch browsers
         if (! touch ) {
-            this.addIdleState( this.get('counter'), { opacity:1 });
-
-            this.bind("fullscreen_enter", function() {
-                fullscreen.addClass('open');
-            });
-
-            this.bind("fullscreen_exit", function() {
-                fullscreen.removeClass('open');
-            });
-
-            this.bind("play", function() {
-                play.addClass("playing");
-            });
-
-            this.bind("pause", function() {
-                play.removeClass('playing');
-            });
-
-            fullscreen.click(function() {
-                gallery.toggleFullscreen();
-            });
-
-            play.click(function() {
-                if($('.galleria-play').hasClass('playing')) {
-                    gallery.pause();
-                } else {
-                    gallery.play();
-                }
-            });
-
-            previous.click(function() {
-                gallery.prev();
-            });
-
-            next.click(function() {
-                gallery.next();
-            });
-
-            info.click(function() {
-                $('.galleria-more').toggle(200);
-            });
-
-            more.click(function() {
-                $('.galleria-more').hide();
-            });
-
             this.attachKeyboard({
                 left: this.prev, // applies the native prev() function
                 right: this.next,
                 up: this.toggleFullscreen,
             });
         }
+
+        this.addIdleState( this.get('counter'), { opacity:1 });
+
+        this.bind("fullscreen_enter", function() {
+            fullscreen.addClass('open');
+        });
+
+        this.bind("fullscreen_exit", function() {
+            fullscreen.removeClass('open');
+        });
+
+        this.bind("play", function() {
+            play.addClass("playing");
+        });
+
+        this.bind("pause", function() {
+            play.removeClass('playing');
+        });
+
+        fullscreen.click(function() {
+            gallery.toggleFullscreen();
+        });
+
+        play.click(function() {
+            if($('.galleria-play').hasClass('playing')) {
+                gallery.pause();
+            } else {
+                gallery.play();
+            }
+        });
+
+        previous.click(function() {
+            gallery.prev();
+        });
+
+        next.click(function() {
+            gallery.next();
+        });
+
+        info.click(function() {
+            $('.galleria-more').toggle();
+        });
+
+        more.click(function() {
+            $('.galleria-more').hide();
+        });
 
         this.bind('loadstart', function(e) {
             if (!e.cached) {

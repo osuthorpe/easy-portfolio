@@ -81,6 +81,11 @@ table {
 a {
   text-decoration: none;
   color: #0099cc;
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -ms-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
+  transition: all 400ms ease;
 }
 
 .right {
@@ -150,11 +155,8 @@ li p { line-height: 21px; }
   textarea,
   select {
     border: 1px solid #ccc;
-    padding: 6px 4px;
+    padding: 8px 4px;
     outline: none;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
     font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #777;
     margin: 0;
@@ -244,12 +246,20 @@ table td {
   padding: 10px;
 }
 
+img {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+}
+
 .alignright {
-  float:right
+  margin: 0px 0px 0px 10px;
+  float: right;
 }
 
 .alignleft {
-  float:left
+  margin: 0px 10px 0px 0px;
+  float: left;
 }
 
 .aligncenter {
@@ -262,13 +272,20 @@ table td {
 
 #wrapper {
   width: 960px;
-  margin: 10px auto;
+  margin: 10px auto 20px;
+  display: block;
+  overflow: hidden;
 }
 
 #navigation {
   width: 120px;
   margin-right: 10px;
   float: left;
+}
+
+#navigation li {
+  margin: 0;
+  padding: 6px 0;
 }
 
 #navigation li a {
@@ -283,7 +300,7 @@ table td {
   line-height: 1.5em
 }
 
-#navigation li a:hover {
+#navigation a:hover {
   color: #0099cc;
 }
 
@@ -304,16 +321,18 @@ table td {
 #main-content {
   width: 830px;
   float: right;
+  display: block;
+  overflow: hidden;
 }
 
 #galleria {
-  height:540px;
+  height:100%;
+  width: 100%;
 }
 
 #header {
   width: 960px;
-  margin: 25px auto 12px;
-  padding-bottom: 10px;
+  margin: auto;
   border-bottom: 2px solid #666666;
 }
 
@@ -588,6 +607,7 @@ table td {
 /*-----------------------------------------------
 9.    Comments
 -----------------------------------------------*/
+
 #comments {
   clear:both
 }
@@ -818,12 +838,32 @@ h3#reply-title {
   width:auto
 }
 
+/*-----------------------------------------------
+7.    Blog
+-----------------------------------------------*/
+
 #blog-content {
   width: 620px;
   margin-right: 20px;
   float: left;
   display: block;
 }
+
+#blog-content h2 {
+  margin-top: 10px;
+}
+
+#blog-content .nav-previous,
+#blog-content .nav-next {
+  display: block;
+  overflow: hidden;
+  float: left;
+}
+
+#blog-content .nav-next {
+  float: right;
+}
+
 
 #blog-content .single-content {
   margin-bottom: 20px;
@@ -838,6 +878,7 @@ h3#reply-title {
 
 #blog-content .single-content .meta {
   color: #a8a8a8;
+  margin-bottom: 5px;
 }
 
 #blog-content .single-content #nav-below {
@@ -863,6 +904,11 @@ h3#reply-title {
 }
 /* @group Widgets */
 
+.widgettitle {
+  font-size: 20px;
+  line-height: 1.5em;
+  margin-bottom: 0;
+}
 
 .widget-container ul {
   list-style: none;
@@ -878,7 +924,8 @@ h3#reply-title {
 }
 
 .widget_search #s {/* This keeps the search inputs in line */
-  width: 60%;
+  width: 75%;
+  display: inline;
 }
 
 .widget_search label {
@@ -894,13 +941,28 @@ h3#reply-title {
   margin-left: 0;
 }
 
-.widget-title {
-  font-weight: bold;
-  font-size: 1.5em;
+#searchform {
+  margin-bottom: 0;
+}
+
+input#s.widget-search {
+  margin-bottom: 0;
 }
 
 input#searchsubmit {
   margin-bottom: 0;
+  border: none;
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+  width: 30px;
+  height: 30px;
+  text-indent: -9999px;
+  background: url('images/spyglass.png') no-repeat #222222;
+  cursor: pointer;
+}
+
+input#searchsubmit:hover {
+  background-color: #666666;
 }
 
 .widget-container a:link,
@@ -978,4 +1040,63 @@ input#searchsubmit {
   border: none;
   margin-left: 1.3em;
   padding: 0;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (min-device-pixel-ratio: 1.5) {
+      input#searchsubmit {
+        background: url('images/spyglass@2x.png') no-repeat #222222 -2px 0;
+        background-size: 32px 32px;
+      }
+}
+
+@media only screen and (max-width: 960px) {
+  #header {
+    margin:  0 auto;
+    width: 748px;
+  }
+
+  #wrapper {
+    width: 748px;
+    margin: auto;
+  }
+
+  #navigation {
+    width: 748px;
+    margin: auto;
+    display: block;
+    overflow: hidden;
+  }
+
+  #navigation ul {
+    margin: 10px 0;
+  }
+  #navigation ul li {
+    float: left;
+    padding: 0 10px;
+  }
+
+  #navigation ul li ul {
+    display: none;
+  }
+
+  #menu, .menu {
+    overflow: hidden;
+  }
+
+  #main-content {
+    float: none;
+    width: 748px;
+    margin: auto;
+  }
+
+  #blog-content {
+    width: 530px;
+  }
+
+  .mosaic-block {
+    margin: 10px 24px;
+  }
 }

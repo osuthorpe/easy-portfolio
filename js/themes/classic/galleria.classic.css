@@ -66,14 +66,16 @@
     bottom: 40px;
     right: 10px;
     background: #000;
-    opacity: .7;
-    filter: alpha(opacity=70);
+    opacity: .8;
+    filter: alpha(opacity=80);
     overflow: hidden;
+    color: #fff;
 }
 
 .galleria-more strong {
     font-weight: bold;
     padding-bottom: 5px;
+    color: #fff !important;
 }
 
 .galleria-controls {

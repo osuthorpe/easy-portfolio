@@ -89,6 +89,20 @@ function new_widgets_init() {
 
 add_action( 'init', 'new_widgets_init' );
 
+function my_search_form( $form ) {
+
+    $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+    <div><label class="screen-reader-text" for="s">' . __('Search for:') . '</label>
+    <input type="text" placeholder="Search" value="' . get_search_query() . '" name="s" id="s" class="widget-search"/>
+    <input type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" />
+    </div>
+    </form>';
+
+    return $form;
+}
+
+add_filter( 'get_search_form', 'my_search_form' );
+
 /*-----------------------------------------
       Add Post Thumbnails Support
 -----------------------------------------*/
