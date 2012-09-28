@@ -1,11 +1,4 @@
 <?php get_header(); ?>
-
-<div id="wrapper">
-
-	<div id="navigation">
-		<?php	get_template_part( 'menu', 'index' ); ?>
-	</div>
-
 	<div id="main-content">
 		<?php $args = array( 'post_type' => 'portfolio' );
 		$loop = new WP_Query( $args );

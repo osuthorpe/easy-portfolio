@@ -6,13 +6,6 @@ Template Name: Blog
 
 <?php get_header(); ?>
 
-<div id="wrapper">
-
-	<div id="navigation">
-		<?php	get_template_part( 'menu', 'index' ); ?>
-	</div>
-
-	<div id="main-content">
 		<div id="blog-content">
 		    <?php query_posts($query_string . '&cat='); ?>
 

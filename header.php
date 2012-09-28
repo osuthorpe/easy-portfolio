@@ -25,4 +25,11 @@
 			<?php } else { ?>
 			    <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_option('bk_logo'); ?>" alt="<?php bloginfo( 'name' ); ?>"/></a>
 			<?php } ?>
+			<div id="pull">Menu</div>
 		</div>
+
+		<div id="wrapper">
+
+			<div id="navigation" class="closed">
+				<?php	get_template_part( 'menu', 'index' ); ?>
+			</div>

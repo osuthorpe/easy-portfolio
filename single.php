@@ -1,11 +1,5 @@
 <?php get_header(); ?>
 
-<div id="wrapper">
-
-	<div id="navigation">
-		<?php	get_template_part( 'menu', 'index' ); ?>
-	</div>
-
 	<div id="main-content">
 		<div id="blog-content">
 		    <?php if(have_posts()) : while(have_posts()) : the_post(); ?>

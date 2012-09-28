@@ -6,12 +6,6 @@ Template Name: Porfolios
 
 <?php get_header(); ?>
 
-<div id="wrapper">
-
-	<div id="navigation">
-		<?php	get_template_part( 'menu', 'index' ); ?>
-	</div>
-
 	<div id="main-content">
         <?php
             $new = new WP_Query('post_type=portfolio');

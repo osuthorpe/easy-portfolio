@@ -40,6 +40,15 @@ function bk_jquery_scripts() {
 
                 webAppLinks();
 
+                jQuery('#pull').click(function(e) {
+                    e.preventDefault();
+                    if (jQuery('#navigation').is('.opened')) {
+                        jQuery('#navigation').removeClass('opened').addClass('closed');
+                    } else {
+                        jQuery('#navigation').removeClass('closed').addClass('opened');
+                    }
+                })
+
             });
         </script>
     <?php }
@@ -56,6 +65,12 @@ function bk_jquery_scripts() {
                 if (viewportWidth < 960) {
                     var viewportHeight = jQuery(window).height();
                     viewportHeight = viewportHeight - 115;
+                    jQuery('#galleria').height(viewportHeight);
+                }
+
+                if (viewportWidth < 767) {
+                    var viewportHeight = jQuery(window).height();
+                    viewportHeight = viewportHeight - 45;
                     jQuery('#galleria').height(viewportHeight);
                 }
             };
