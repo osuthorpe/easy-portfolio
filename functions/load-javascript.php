@@ -24,6 +24,15 @@ function bk_jquery_scripts() { ?>
     <script type="text/javascript">
     <?php if (!is_admin()) { ?>
 
+        // When ready...
+        window.addEventListener("load",function() {
+          // Set a timeout...
+          setTimeout(function(){
+            // Hide the address bar!
+            window.scrollTo(0, 1);
+          }, 0);
+        });
+
         function webAppLinks() {
             var a=document.getElementsByTagName("a");
             var par = $('').closest('div','galleria-controls');
@@ -90,8 +99,11 @@ function bk_jquery_scripts() { ?>
         var resizeTimer;
         $(window).resize(function() {
             var w = jQuery(window).width();
+            var gWidth = jQuery('.galleria-container').width();
 
-            if ( w < 960 ) {
+            var full = $('.galleria-container').hasClass('fullscreen');
+
+            if (w < 1100 && !full) {
                 clearTimeout(resizeTimer);
                 resizeTimer = setTimeout(reloadGalleria, 200);
             }
