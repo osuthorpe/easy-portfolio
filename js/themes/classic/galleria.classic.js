@@ -10,19 +10,19 @@
 (function($) {
 
 /*global jQuery, Galleria */
-
 Galleria.addTheme({
     name: 'classic',
     author: 'Galleria',
     css: 'galleria.classic.css',
     defaults: {
-        transition: 'slide',
+        transition: 'fade',
         touchTransition: 'slide',
         fullscreenTransition: 'fade',
+        fullscreenCrop: true,
         thumbnails: false,
-        responsive: true,
+        responsive: false,
         autoplay: false,
-        imageCrop: true,
+        imageCrop: true
     },
     init: function(options) {
 

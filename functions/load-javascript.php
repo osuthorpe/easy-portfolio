@@ -19,89 +19,94 @@ function bk_load_all_scripts() {
 
 add_action('init' , 'bk_load_all_scripts');
 
-function bk_jquery_scripts() {
+function bk_jquery_scripts() { ?>
 
-    if (!is_admin()) { ?>
-        <script type="text/javascript">
+    <script type="text/javascript">
+    <?php if (!is_admin()) { ?>
 
-            function webAppLinks() {
-                var a=document.getElementsByTagName("a");
-                for(var i=0;i<a.length;i++) {
-                    if(!a[i].onclick && a[i].getAttribute("target") != "_blank") {
-                        a[i].onclick=function() {
-                            window.location=this.getAttribute("href");
-                            return false;
-                        }
+        function webAppLinks() {
+            var a=document.getElementsByTagName("a");
+            var par = $('').closest('div','galleria-controls');
+            for(var i=0;i<a.length;i++) {
+                if(!a[i].onclick && a[i].getAttribute("target") != "_blank") {
+                    a[i].onclick=function() {
+                        window.location=this.getAttribute("href");
+                        return false;
                     }
                 }
-            };
+            }
+        };
 
-            jQuery(document).ready(function() {
-
-                webAppLinks();
-
-                jQuery('#pull').click(function(e) {
-                    e.preventDefault();
-                    if (jQuery('#navigation').is('.opened')) {
-                        jQuery('#navigation').removeClass('opened').addClass('closed');
-                    } else {
-                        jQuery('#navigation').removeClass('closed').addClass('opened');
-                    }
-                })
-
-            });
-        </script>
-    <?php }
-    if ( (is_singular('portfolio') || is_home()) && !is_admin() ) { ?>
-        <script type="text/javascript">
-            function galleryHeight() {
-                var viewportWidth = jQuery(window).width();
-                if (viewportWidth > 960) {
-                    var viewportHeight = jQuery(window).height();
-                    viewportHeight = viewportHeight - 80;
-                    jQuery('#galleria').height(viewportHeight);
+        function menu() {
+            jQuery('#pull').click(function(e) {
+                e.preventDefault();
+                if (jQuery('#navigation').is('.opened')) {
+                    jQuery('#navigation').removeClass('opened').addClass('closed');
+                } else {
+                    jQuery('#navigation').removeClass('closed').addClass('opened');
                 }
+            })
+        }
 
-                if (viewportWidth < 960) {
-                    var viewportHeight = jQuery(window).height();
-                    viewportHeight = viewportHeight - 115;
-                    jQuery('#galleria').height(viewportHeight);
-                }
+        function galleryHeight() {
 
-                if (viewportWidth < 767) {
-                    var viewportHeight = jQuery(window).height();
-                    viewportHeight = viewportHeight - 45;
-                    jQuery('#galleria').height(viewportHeight);
-                }
-            };
+            var viewportWidth = jQuery(window).width();
 
-            function resizeGallery() {
-                var resizeTimer;
-                $(window).resize(function() {
-                    clearTimeout(resizeTimer);
-                    resizeTimer = setTimeout(location.reload(), 100);
-                });
+            if (viewportWidth > 960) {
+                var viewportHeight = jQuery(window).height();
+                viewportHeight = viewportHeight - 80;
+                jQuery('#galleria').height(viewportHeight);
             }
 
-            jQuery(document).ready(function() {
+            if (viewportWidth < 960) {
+                var viewportHeight = jQuery(window).height();
+                viewportHeight = viewportHeight - 115;
+                jQuery('#galleria').height(viewportHeight);
+            }
 
-                galleryHeight();
+            if (viewportWidth < 767) {
+                var viewportHeight = jQuery(window).height();
+                viewportHeight = viewportHeight - 45;
+                jQuery('#galleria').height(viewportHeight);
+            }
+        };
 
-                resizeGallery();
+        jQuery(document).ready(function() {
 
-            });
-        </script>
+            webAppLinks();
 
-    <?php } if (is_page_template('portfolios.php') && !is_admin() ) {
-        wp_enqueue_script('mosaic'); ?>
+            galleryHeight();
 
-        <script type="text/javascript">
-            jQuery(function($){
-                $('.fade').mosaic();
-            });
-        </script>
-    <?php }
-}
+            menu();
+
+        });
+
+    <?php } if ( (is_singular('portfolio') || is_home()) && !is_admin() ) { ?>
+
+        function reloadGalleria() {
+            location.reload();
+        };
+
+        var resizeTimer;
+        $(window).resize(function() {
+            var w = jQuery(window).width();
+
+            if ( w < 960 ) {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(reloadGalleria, 200);
+            }
+        });
+
+    <?php } if (is_page_template('portfolios.php') && !is_admin() ) { ?>
+
+        <?php wp_enqueue_script('mosaic'); ?>
+
+        jQuery(function($){
+            $('.fade').mosaic();
+        });
+    <?php } ?>
+    </script>
+<?php }
 
 add_action('wp_head', 'bk_jquery_scripts');
 
