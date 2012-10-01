@@ -444,8 +444,12 @@ img {
   padding:10px 10px 0
 }
 
+.mosaic-overlay .details {
+  margin-top: 40px;
+}
+
 .mosaic-overlay p {
-  padding:0 10px
+  padding:20px
 }
 
 /*** Custom Animation Styles (You can remove/add any styles below) ***/
@@ -1073,6 +1077,10 @@ input#searchsubmit:hover {
     .mosaic-block img {
       width: 100%;
       margin-top: -50px;
+    }
+
+    .mosaic-overlay .details {
+      margin-top: 0px;
     }
 }
 

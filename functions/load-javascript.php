@@ -10,7 +10,6 @@ function bk_load_all_scripts() {
         wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', false, '1.7.1');
         wp_register_script('galleria', get_template_directory_uri().'/js/galleria-1.2.8.min.js', 'jquery');
         wp_register_script('mosaic', get_template_directory_uri().'/js/mosaic.1.0.1.min.js', 'jquery');
-        wp_register_script('colorbox', get_template_directory_uri().'/js/jquery.colorbox-.min.js', 'jquery');
 
         wp_enqueue_script('jquery');
         wp_enqueue_script('galleria');
