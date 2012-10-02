@@ -15,8 +15,13 @@
 	        </h1>
 
 	        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	            <?php the_title(); ?>
-	            <?php the_excerpt(); ?>
+	        	<div class="single-content">
+		            <h4><?php the_title(); ?></h4>
+		            <?php the_excerpt(); ?>
+		            <div class="post-tags page-tags">
+	        			<?php the_tags('',', ',''); ?>
+	        		</div>
+		        </div>
 
 	        <?php endwhile; else: ?>
 

@@ -114,6 +114,10 @@ a {
   transition: all 400ms ease;
 }
 
+a:hover {
+  color: #444;
+}
+
 .right {
   float: right;
 }
@@ -285,7 +289,6 @@ img {
 
 #navigation {
   width: 120px;
-  margin-right: 10px;
   float: left;
 }
 
@@ -368,11 +371,12 @@ img {
 
 #portfolio-content .portfolio-link {
   float: left;
-  text-align: center;
 }
 
 #portfolio-content .portfolio-link h4 {
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.5em;
+  margin-left: 10px;
 }
 
 #portfolio-content .portfolio-link h4 a {
@@ -421,7 +425,7 @@ img {
   overflow:hidden;
   width:200px;
   height:200px;
-  margin:0 7px 7px 0;
+  margin-left: 10px;
 }
 
 .mosaic-backdrop {
@@ -454,7 +458,12 @@ img {
 }
 
 .mosaic-overlay p {
-  padding:20px
+  padding:20px;
+  text-align: center;
+}
+
+.mosaic-overlay:hover {
+  color: #fff;
 }
 
 /*** Custom Animation Styles (You can remove/add any styles below) ***/
@@ -744,12 +753,8 @@ h3#reply-title {
 #blog-content .single-content {
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #888888;
+  border-bottom: 1px solid #e9e9e9;
   overflow: hidden;
-}
-
-#blog-content .single-content a {
-  color: #0099cc;
 }
 
 #blog-content .single-content .meta {
@@ -760,9 +765,6 @@ h3#reply-title {
 #blog-content .single-content #nav-below {
   margin-top: 20px;
   overflow: hidden;
-}
-#blog-content .single-content .nav-previous {
-  float: left;
 }
 
 #blog-content .content {
@@ -842,6 +844,11 @@ input#searchsubmit {
   text-indent: -9999px;
   background: url('images/spyglass.png') no-repeat #222222;
   cursor: pointer;
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -ms-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
+  transition: all 400ms ease;
 }
 
 input#searchsubmit:hover {
@@ -978,6 +985,11 @@ input#searchsubmit:hover {
 
   #blog-content {
     width: 530px;
+    margin-bottom: 20px;
+  }
+
+  #portfolio-content .portfolio-link h4 {
+    margin-left: 24px;
   }
 
   .mosaic-block {
@@ -1023,17 +1035,24 @@ input#searchsubmit:hover {
 
     #navigation ul li {
       float: none;
-      border-bottom: 1px solid #444444;
+      border-bottom: 1px solid #888;
+      border-top: 1px solid #fff;
       background: #e9e9e9;
     }
     #navigation ul li:last-child {
       border-bottom: none
+    }
+    #navigation ul li:first-child {
+      border-top: none;
     }
     #navigation ul li a {
       font-size: 24px;
       padding: 10px;
       display: block;
       line-height: 1em;
+      color: #fff;
+      text-shadow: 1px 1px 0px #888;
+      filter: dropshadow(color=#888, offx=1, offy=1);
     }
     #navigation ul li ul {
       display: none;
@@ -1056,8 +1075,23 @@ input#searchsubmit:hover {
       margin: 0px;
     }
 
+    #blog-content .single-content h2 {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1em;
+    }
+
     #sidebar {
       margin-top: 20px;
+    }
+
+    .widget_search #s {
+      width: 87%;
+      margin-right: 5px;
+    }
+
+    #portfolio-content .portfolio-link h4 {
+      margin-left: 20px;
     }
 
     .mosaic-block {
@@ -1101,6 +1135,15 @@ input#searchsubmit:hover {
 
     #portfolio-content .portfolio-link {
       width: 100%;
+    }
+
+    #portfolio-content .portfolio-link h4 {
+      margin-left: 0;
+    }
+
+    .widget_search #s {
+      width: 80%;
+      margin-right: 5px;
     }
 
     .mosaic-block {
