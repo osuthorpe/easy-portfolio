@@ -18,7 +18,7 @@ Galleria.addTheme({
         transition: 'fade',
         touchTransition: 'slide',
         fullscreenTransition: 'fade',
-        fullscreenCrop: true,
+        fullscreenCrop: false,
         thumbnails: false,
         responsive: false,
         autoplay: false,

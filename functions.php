@@ -24,7 +24,7 @@ if( file_exists(get_template_directory().'/functions/options/options.php') )
 
 // Re-define meta box path and URL
 define( 'RWMB_URL', trailingslashit( get_stylesheet_directory_uri() . '/functions/meta-box' ) );
-define( 'RWMB_DIR', trailingslashit( STYLESHEETPATH . '/functions/meta-box' ) );
+define( 'RWMB_DIR', trailingslashit( get_stylesheet_directory() . '/functions/meta-box' ) );
 
 // Include the meta box script
 if( file_exists(get_template_directory().'/functions/meta-box/meta-box.php') )

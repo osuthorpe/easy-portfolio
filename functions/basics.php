@@ -26,7 +26,7 @@ add_theme_support( 'automatic-feed-links' );
 //Register Wordpress 3.0+ Menu
 function bk_register_menus() {
     register_nav_menus(array(
-        'primary-menu' => __('Primary Menu', 'easy_theme'),
+        'primary-menu' => __('Primary Menu', 'bk-media'),
     ));
 }
 add_action('init', 'bk_register_menus');
@@ -52,7 +52,7 @@ function new_widgets_init() {
     register_sidebar( array(
         'name' => 'Sidebar',
         'id' => 'one',
-        'description' => __( 'sidebar', 'easy_theme'),
+        'description' => __( 'sidebar','bk-media'),
         'before_widget' => '<li id="%1$s" class="widget %2$s">',
         'after_widget' => "</li>",
         'before_title' => '<h2 class="widgettitle">',
@@ -61,7 +61,7 @@ function new_widgets_init() {
     register_sidebar( array(
         'name' => 'Footer Area One',
         'id' => 'foot_one',
-        'description' => __( 'footer area 1', 'easy_theme'),
+        'description' => __( 'footer area 1','bk-media'),
         'before_widget' => '<li id="%1$s" class="widget %2$s">',
         'after_widget' => "</li>",
         'before_title' => '<h2 class="widgettitle">',
@@ -70,7 +70,7 @@ function new_widgets_init() {
     register_sidebar( array(
         'name' => 'Footer Area Two',
         'id' => 'foot_two',
-        'description' => __( 'footer area 2', 'easy_theme'),
+        'description' => __( 'footer area 2','bk-media'),
         'before_widget' => '<li id="%1$s" class="widget %2$s">',
         'after_widget' => "</li>",
         'before_title' => '<h2 class="widgettitle">',
@@ -79,7 +79,7 @@ function new_widgets_init() {
     register_sidebar( array(
         'name' => 'Footer Area Three',
         'id' => 'foot_three',
-        'description' => __( 'footer area 3', 'easy_theme'),
+        'description' => __( 'footer area 3','bk-media'),
         'before_widget' => '<li id="%1$s" class="widget %2$s">',
         'after_widget' => "</li>",
         'before_title' => '<h2 class="widgettitle">',
@@ -92,7 +92,7 @@ add_action( 'init', 'new_widgets_init' );
 function my_search_form( $form ) {
 
     $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-    <div><label class="screen-reader-text" for="s">' . __('Search for:') . '</label>
+    <div><label class="screen-reader-text" for="s">' . __('Search for:','bk-media') . '</label>
     <input type="text" placeholder="Search" value="' . get_search_query() . '" name="s" id="s" class="widget-search"/>
     <input type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" />
     </div>

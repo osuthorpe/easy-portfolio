@@ -2,7 +2,7 @@
 
 	<div id="main-content">
 		<div id="blog-content">
-			<h3 class="page-title">Search Result for <?php /* Search Count */ $allsearch = &new WP_Query("s=$s&showposts=-1"); $key = esc_html($s, 1); $count = $allsearch->post_count; _e(''); _e('<span class="search-terms">'); echo $key; _e('</span>'); _e(' &mdash; '); echo $count . ' '; _e('articles'); wp_reset_query(); ?></h3>
+			<h3 class="page-title">Search Result for <?php /* Search Count */ $allsearch = &new WP_Query("s=$s&showposts=-1"); $key = esc_html($s, 1); $count = $allsearch->post_count; _e('','bk-media'); _e('<span class="search-terms">','bk-media'); echo $key; _e('</span>','bk-media'); _e(' &mdash; ','bk-media'); echo $count . ' '; _e('articles','bk-media'); wp_reset_query(); ?></h3>
 
 
 	        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

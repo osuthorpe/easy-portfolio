@@ -16,7 +16,7 @@ input.error, textarea.error, select.error {
 .rwmb-field {
 	margin: 10px 0;
 }
-.rwmb-label, 
+.rwmb-label,
 .rwmb-input {
 	display: inline-block;
 	vertical-align: top;
@@ -77,7 +77,7 @@ input.error, textarea.error, select.error {
 /* =Styles for 'side' meta boxes
 -------------------------------------------------------------- */
 
-#side-sortables .rwmb-label, 
+#side-sortables .rwmb-label,
 #side-sortables .rwmb-input {
 	width: 100%;
 }
