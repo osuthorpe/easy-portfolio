@@ -32,7 +32,7 @@
 						$alt= get_post_meta($att, '_wp_attachment_image_alt', true);
 
 						// show image
-						echo "<img src='{$src}' data-title='{$title}' data-description='{$caption}'>";
+						echo "<img src='{$src}' data-title='{$title}' data-description='{$caption}' alt='{$caption}'>";
 				} ?>
 			</div>
 			<script>

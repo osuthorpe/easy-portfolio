@@ -4,9 +4,10 @@
 
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 		<meta name="viewport" content="initial-scale=1; maximum-scale=1">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="shortcut icon" href="<?php bloginfo( 'stylesheet_url' ); ?>/images/favicon.ico">
+		<link rel="apple-touch-icon" href="<?php bloginfo( 'stylesheet_url' ); ?>/images/apple-touch-icon.png">
 		<title><?php echo bloginfo( 'name' ); ?> <?php echo wp_title(); ?> </title>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen" />
@@ -20,10 +21,10 @@
 
 	<body <?php body_class(); ?>>
 		<div id="header" class="left clear">
-			<?php if ( get_option('bk_logo') == '') { ?>
+			<?php if ( of_get_option('bk_logo') == '') { ?>
 			    <h1 class="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 			<?php } else { ?>
-			    <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_option('bk_logo'); ?>" alt="<?php bloginfo( 'name' ); ?>"/></a>
+			    <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php echo of_get_option('bk_logo'); ?>" alt="<?php bloginfo( 'name' ); ?>"/></a>
 			<?php } ?>
 			<div id="pull">Menu</div>
 		</div>

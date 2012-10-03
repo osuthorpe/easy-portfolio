@@ -7,15 +7,23 @@
 
 	        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-	        	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-
-	            <p><?php
+	            <?php
 					// Replace the_exerpt() with:
 					$excerpt = get_the_excerpt();
 					$keys = explode(" ",$s);
 					$excerpt = preg_replace('/('.implode('|', $keys) .')/iu', '<strong>\0</strong>', $excerpt);
-					echo $excerpt;
-				?></p>
+				?>
+
+				<div class="single-content">
+		            <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+
+		            <div class="content">
+		                <?php echo $excerpt; ?>
+		                <p class="tags"><?php the_tags('Tagged with: ',' • ',''); ?></p>
+		                <a class="more right" href="<?php the_permalink(); ?>">read more...</a>
+		            </div>
+
+		        </div>
 
 	        <?php endwhile; else: ?>
 

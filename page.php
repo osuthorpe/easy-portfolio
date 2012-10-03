@@ -15,7 +15,7 @@
 	            </div>
 
 	            <div class="post-tags page-tags">
-        			<?php the_tags('',', ',''); ?>
+        			<p class="tags"><?php the_tags('Tagged with: ',' • ',''); ?></p>
         		</div>
 
 	            <div class="content">
@@ -30,9 +30,11 @@
 	</div>
 
 	<div id="sidebar">
-		<?php get_sidebar(); ?>
+		<ul><?php get_sidebar(); ?></ul>
 	</div>
 
 </div>
+
+</div><!-- Close Wrapper -->
 
 <?php get_footer(); ?>

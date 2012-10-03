@@ -23,15 +23,6 @@ function bk_jquery_scripts() { ?>
     <script type="text/javascript">
     <?php if (!is_admin()) { ?>
 
-        // When ready...
-        window.addEventListener("load",function() {
-          // Set a timeout...
-          setTimeout(function(){
-            // Hide the address bar!
-            window.scrollTo(0, 1);
-          }, 0);
-        });
-
         function webAppLinks() {
             var a=document.getElementsByTagName("a");
             var par = $('').closest('div','galleria-controls');

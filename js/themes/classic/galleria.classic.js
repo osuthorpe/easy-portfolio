@@ -18,8 +18,8 @@ Galleria.addTheme({
         transition: 'fade',
         touchTransition: 'slide',
         fullscreenTransition: 'fade',
-        fullscreenCrop: false,
-        thumbnails: false,
+        fullscreenCrop: true,
+        thumbnails: true,
         responsive: false,
         autoplay: false,
         imageCrop: true
@@ -103,6 +103,25 @@ Galleria.addTheme({
 
         more.click(function() {
             $('.galleria-more').hide();
+        });
+
+        // bind some stuff
+        this.bind('thumbnail', function(e) {
+
+            if (! touch ) {
+                // fade thumbnails
+                $(e.thumbTarget).css('opacity', 0.6).parent().hover(function() {
+                    $(this).not('.active').children().stop().fadeTo(100, 1);
+                }, function() {
+                    $(this).not('.active').children().stop().fadeTo(400, 0.6);
+                });
+
+                if ( e.index === this.getIndex() ) {
+                    $(e.thumbTarget).css('opacity',1);
+                }
+            } else {
+                $(e.thumbTarget).css('opacity', this.getIndex() ? 1 : 0.6);
+            }
         });
 
         this.bind('loadstart', function(e) {

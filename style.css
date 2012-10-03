@@ -96,7 +96,7 @@ h5 { font-size: 17px; line-height: 24px; }
 h6 { font-size: 14px; line-height: 21px; }
 .subheader { color: #777; }
 
-p { margin: 0 0 20px 0; line-height: 1.5em}
+p { margin: 0 0 10px 0; line-height: 1.5em}
 p img { margin: 0; }
 p.lead { font-size: 21px; line-height: 27px; color: #777;  }
 
@@ -140,7 +140,7 @@ ul.square { list-style: square outside; }
 ul.circle { list-style: circle outside; }
 ul.disc { list-style: disc outside; }
 ul ul, ul ol,
-ol ol, ol ul, dd dt { margin: 4px 0 5px 30px; font-size: 90%;  }
+ol ol, ol ul, dd dt { margin: 4px 0 5px 30px; }
 dt { font-weight: bold; }
 ul ul li, ul ol li,
 ol ol li, ol ul li { margin-bottom: 6px; }
@@ -295,6 +295,10 @@ img {
 #navigation li {
   margin: 0;
   padding: 6px 0;
+}
+
+#navigation li:first-child {
+  padding-top: 0;
 }
 
 #navigation li a {
@@ -762,6 +766,12 @@ h3#reply-title {
   margin-bottom: 5px;
 }
 
+#blog-content .single-content .post-tags p {
+  margin: 0;
+  padding: 0;
+  font-size: .9em;
+}
+
 #blog-content .single-content #nav-below {
   margin-top: 20px;
   overflow: hidden;
@@ -795,16 +805,16 @@ h3#reply-title {
   margin-bottom: 0;
 }
 
-.widget-container ul {
+.widget ul {
   list-style: none;
 }
 
-.widget-container ul ul {
+.widget ul ul {
   list-style: square;
-  margin-left: 1.3em;
+  margin-left: 0;
 }
 
-.widget-container select {
+.widget select {
   max-width: 100%;
 }
 
@@ -817,12 +827,12 @@ h3#reply-title {
   display: none;
 }
 
-.widget-container {
+.widget {
   margin: 0 0 28px 0;
   padding-top: 1px;
 }
 
-.widget-container ul {
+.widget ul {
   margin-left: 0;
 }
 
@@ -909,14 +919,6 @@ input#searchsubmit:hover {
   border: 1px solid #ccc;
   padding: 5px;
   color: #666;
-}
-
-/* Indent Sidebar Lists */
-
-.widget-container ul ul {
-  border: none;
-  margin-left: 1.3em;
-  padding: 0;
 }
 
 

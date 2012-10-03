@@ -12,15 +12,11 @@ if( file_exists(get_template_directory().'/functions/load-javascript.php') )
 if( file_exists(get_template_directory().'/functions/post_types.php') )
 	include_once(get_template_directory().'/functions/post_types.php');
 
-/* Bootstrap the Theme Options Framework */
-
-if( file_exists(get_template_directory().'/functions/options/options.php') )
-    include_once(get_template_directory().'/functions/options/options.php');
-
- /* Set up General Options */
-
- if( file_exists(get_template_directory().'/functions/options/theme-options.php') )
-    include_once(get_template_directory().'/functions/options/theme-options.php');
+// Load Options Theme Framework
+if ( !function_exists( 'optionsframework_init' ) ) {
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
+}
 
 // Re-define meta box path and URL
 define( 'RWMB_URL', trailingslashit( get_stylesheet_directory_uri() . '/functions/meta-box' ) );

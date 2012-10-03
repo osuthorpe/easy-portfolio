@@ -1,13 +1,13 @@
 <?php
 /**
  * Theme Colors and Images Settings Functions file
- * 
+ *
  * Below is an example of creating a new tab for your Theme Options page:
  */
 
-$colors_images_tab = array(
-	"name" => "colors_and_images",
-	"title" => __("Colors and Images","upfw"),
+$main_settings_tab = array(
+	"name" => "main_settings",
+	"title" => __("Main Settings","bk-media"),
 	'sections' => array(
 		'color_scheme' => array(
 			'name' => 'color_scheme',
@@ -17,13 +17,27 @@ $colors_images_tab = array(
 	)
 );
 
-register_theme_option_tab($colors_images_tab);
+register_theme_option_tab($main_settings_tab);
+
+$style_settings_tab = array(
+  "name" => "style_settings",
+  "title" => __("Style Settings","bk-media"),
+  'sections' => array(
+    'color_scheme' => array(
+      'name' => 'color_scheme',
+      'title' => __( 'Color Scheme', 'upfw' ),
+      'description' => __( 'Select your color scheme.','upfw' )
+    )
+  )
+);
+
+register_theme_option_tab($style_settings_tab);
 
 // The following example shows you how to register theme options and assign them to tabs:
 
 $options = array(
   'theme_color_scheme' => array(
-  	"tab" => "colors_and_images",
+  	"tab" => "main_settings",
   	"name" => "theme_color_scheme",
   	"title" => "Theme Color Scheme",
   	"description" => __( "Select a color scheme for your website", "example" ),

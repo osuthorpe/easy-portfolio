@@ -39,7 +39,7 @@
 		</div>
 
 		<div id="sidebar">
-			<?php get_sidebar(); ?>
+			<ul><?php get_sidebar(); ?></ul>
 		</div>
 	</div>
 
