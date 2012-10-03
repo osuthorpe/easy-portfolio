@@ -27,13 +27,10 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 
-	// Test data
-	$test_array = array(
-		'one' => __('One', 'options_framework_theme'),
-		'two' => __('Two', 'options_framework_theme'),
-		'three' => __('Three', 'options_framework_theme'),
-		'four' => __('Four', 'options_framework_theme'),
-		'five' => __('Five', 'options_framework_theme')
+	//Icon Types
+	$icon_array = array(
+		'light' => __('light', 'options_framework_theme'),
+		'dark' => __('dark', 'options_framework_theme')
 	);
 
 	// Multicheck Array
@@ -53,18 +50,30 @@ function optionsframework_options() {
 
 	// Background Defaults
 	$background_defaults = array(
-		'color' => '',
+		'color' => '#ffffff',
 		'image' => '',
 		'repeat' => 'repeat',
 		'position' => 'top center',
 		'attachment'=>'scroll' );
 
 	// Typography Defaults
-	$typography_defaults = array(
+	$title_typography_defaults = array(
 		'size' => '15px',
 		'face' => 'georgia',
 		'style' => 'bold',
-		'color' => '#bada55' );
+		'color' => '#222222' );
+
+	$menu_typography_defaults = array(
+		'size' => '15px',
+		'face' => 'georgia',
+		'style' => 'normal',
+		'color' => '#222222' );
+
+	$body_typography_defaults = array(
+		'size' => '15px',
+		'face' => 'georgia',
+		'style' => 'normal',
+		'color' => '#222222' );
 
 	// Typography Options
 	$typography_options = array(
@@ -97,14 +106,177 @@ function optionsframework_options() {
 		$options_pages[$page->ID] = $page->post_title;
 	}
 
+	// Pull all the portfolios into an array
+	$options_portfolios = array();
+	$args = array(
+		'post_type' => 'portfolio',
+		'orderby'   => 'title',
+    	'order'     => 'ASC',);
+	$options_portfolio_obj = get_posts($args);
+	$options_portfolios[''] = 'Select a portfolio:';
+	foreach ($options_portfolio_obj as $portfolio) {
+		$options_portfolios[$portfolio->ID] = $portfolio->post_title;
+	}
+
 	// If using image radio buttons, define a directory path
 	$imagepath =  get_template_directory_uri() . '/images/';
 
+	//Default site title from wordpress title
+	$site_title = get_bloginfo('name');
+
+	//Default copyright notice
+	$copyright = '© ' . $site_title . ', All rights reserved';
+
 	$options = array();
 
+	/*
+	 * General Options Tab
+	 */
 	$options[] = array(
-		'name' => __('Basic Settings', 'options_framework_theme'),
+		'name' => __('General', 'options_framework_theme'),
 		'type' => 'heading');
+
+	$options[] = array(
+		'name' => __('Site Title', 'options_framework_theme'),
+		'desc' => __('Set the Title of your site', 'options_framework_theme'),
+		'id' => 'bk_site_title',
+		'std' => $site_title,
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('Site Logo', 'options_framework_theme'),
+		'desc' => __('Upload your logo to display in the header [Width: 400px, Height: 50px].', 'options_framework_theme'),
+		'id' => 'bk_logo',
+		'type' => 'upload');
+
+	$options[] = array(
+		'name' => __('Mobile App Icon', 'options_framework_theme'),
+		'desc' => __('Upload an icon for mobile home screens [Width: 57px, Height: 57px].', 'options_framework_theme'),
+		'id' => 'bk_mobile_icon',
+		'type' => 'upload');
+
+	$options[] = array(
+		'name' => __('Mobile App Icon HD', 'options_framework_theme'),
+		'desc' => __('Upload a larger icon for tablets and high resolution devices [Width: 104px, Height: 104px].', 'options_framework_theme'),
+		'id' => 'bk_mobile_icon_hd',
+		'type' => 'upload');
+
+	$options[] = array(
+		'name' => __('Front Page Portfolio', 'options_framework_theme'),
+		'desc' => __('Select your portfolio for the home page', 'options_framework_theme'),
+		'id' => 'bk_front_page',
+		'type' => 'select',
+		'options' => $options_portfolios);
+
+	$options[] = array(
+		'name' => __('Copyright', 'options_framework_theme'),
+		'desc' => __('Set the copyright you want at the bottom of the site', 'options_framework_theme'),
+		'id' => 'bk_copyright',
+		'std' => $copyright,
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('Google Tracking Code', 'options_framework_theme'),
+		'desc' => __('Copy and paste your google tracking code here, should start with XA-.', 'options_framework_theme'),
+		'id' => 'bk_google_code',
+		'std' => '',
+		'type' => 'textarea');
+
+	/*
+	 *	Styles & Colors
+	 */
+
+	$options[] = array(
+		'name' => __('Styles & Colors', 'options_framework_theme'),
+		'type' => 'heading');
+
+	$options[] = array(
+		'name' =>  __('Main Background', 'options_framework_theme'),
+		'desc' => __('Change the background CSS.', 'options_framework_theme'),
+		'id' => 'bk_main_background',
+		'std' => $background_defaults,
+		'type' => 'background');
+
+	$options[] = array(
+		'name' => __('Icon Type', 'options_framework_theme'),
+		'desc' => __('Select dark for a light background, light for a darker background.', 'options_framework_theme'),
+		'id' => 'bk_icon_type',
+		'std' => 'dark',
+		'type' => 'select',
+		'class' => 'mini',
+		'options' => $icon_array);
+
+	$options[] = array(
+		'name' => __('Accent Color', 'options_framework_theme'),
+		'desc' => __('Color for the lines in the design.', 'options_framework_theme'),
+		'id' => 'bk_accent_color',
+		'std' => '#222222',
+		'type' => 'color' );
+
+	$options[] = array(
+		'name' => __('Link Color', 'options_framework_theme'),
+		'desc' => __('Default color for any links in the theme.', 'options_framework_theme'),
+		'id' => 'bk_link_color',
+		'std' => '#0099cc',
+		'type' => 'color' );
+
+	$options[] = array(
+		'name' => __('Link Hover Color', 'options_framework_theme'),
+		'desc' => __('Default color for any time link is hovered over.', 'options_framework_theme'),
+		'id' => 'bk_link_hover_color',
+		'std' => '#444444',
+		'type' => 'color' );
+
+	$options[] = array( 'name' => __('Title Typography', 'options_framework_theme'),
+		'desc' => __('Type settings for the title fields on the site.', 'options_framework_theme'),
+		'id' => "bk_title_type",
+		'std' => $title_typography_defaults,
+		'type' => 'typography' );
+
+	$options[] = array( 'name' => __('Menu Typography', 'options_framework_theme'),
+		'desc' => __('Type settings for the main menu of the site.', 'options_framework_theme'),
+		'id' => "bk_menu_type",
+		'std' => $menu_typography_defaults,
+		'type' => 'typography' );
+
+	$options[] = array( 'name' => __('Body Typography', 'options_framework_theme'),
+		'desc' => __('Type settings for the body text on the site.', 'options_framework_theme'),
+		'id' => "bk_body_type",
+		'std' => $body_typography_defaults,
+		'type' => 'typography' );
+
+	$options[] = array(
+		'name' => __('Text Editor', 'options_framework_theme'),
+		'type' => 'heading' );
+
+	/**
+	 * For $settings options see:
+	 * http://codex.wordpress.org/Function_Reference/wp_editor
+	 *
+	 * 'media_buttons' are not supported as there is no post to attach items to
+	 * 'textarea_name' is set by the 'id' you choose
+	 */
+
+	$wp_editor_settings = array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 5,
+		'tinymce' => array( 'plugins' => 'wordpress' )
+	);
+
+	$options[] = array(
+		'name' => __('Custom Typography', 'options_framework_theme'),
+		'desc' => __('Custom typography options.', 'options_framework_theme'),
+		'id' => "custom_typography",
+		'std' => $typography_defaults,
+		'type' => 'typography',
+		'options' => $typography_options );
+
+	$options[] = array(
+		'name' => __('Default Text Editor', 'options_framework_theme'),
+		'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'options_framework_theme' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
+		'id' => 'example_editor',
+		'type' => 'editor',
+		'settings' => $wp_editor_settings );
 
 	$options[] = array(
 		'name' => __('Input Text Mini', 'options_framework_theme'),
@@ -129,23 +301,6 @@ function optionsframework_options() {
 		'type' => 'textarea');
 
 	$options[] = array(
-		'name' => __('Input Select Small', 'options_framework_theme'),
-		'desc' => __('Small Select Box.', 'options_framework_theme'),
-		'id' => 'example_select',
-		'std' => 'three',
-		'type' => 'select',
-		'class' => 'mini', //mini, tiny, small
-		'options' => $test_array);
-
-	$options[] = array(
-		'name' => __('Input Select Wide', 'options_framework_theme'),
-		'desc' => __('A wider select box.', 'options_framework_theme'),
-		'id' => 'example_select_wide',
-		'std' => 'two',
-		'type' => 'select',
-		'options' => $test_array);
-
-	$options[] = array(
 		'name' => __('Select a Category', 'options_framework_theme'),
 		'desc' => __('Passed an array of categories with cat_ID and cat_name', 'options_framework_theme'),
 		'id' => 'example_select_categories',
@@ -167,14 +322,6 @@ function optionsframework_options() {
 		'options' => $options_pages);
 
 	$options[] = array(
-		'name' => __('Input Radio (one)', 'options_framework_theme'),
-		'desc' => __('Radio select with default options "one".', 'options_framework_theme'),
-		'id' => 'example_radio',
-		'std' => 'one',
-		'type' => 'radio',
-		'options' => $test_array);
-
-	$options[] = array(
 		'name' => __('Example Info', 'options_framework_theme'),
 		'desc' => __('This is just some example information you can put in the panel.', 'options_framework_theme'),
 		'type' => 'info');
@@ -185,10 +332,6 @@ function optionsframework_options() {
 		'id' => 'example_checkbox',
 		'std' => '1',
 		'type' => 'checkbox');
-
-	$options[] = array(
-		'name' => __('Advanced Settings', 'options_framework_theme'),
-		'type' => 'heading');
 
 	$options[] = array(
 		'name' => __('Check to Show a Hidden Text Input', 'options_framework_theme'),
@@ -205,12 +348,6 @@ function optionsframework_options() {
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Uploader Test', 'options_framework_theme'),
-		'desc' => __('This creates a full size uploader that previews the image.', 'options_framework_theme'),
-		'id' => 'bk_logo',
-		'type' => 'upload');
-
-	$options[] = array(
 		'name' => "Example Image Selector",
 		'desc' => "Images for layout.",
 		'id' => "example_images",
@@ -223,65 +360,12 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' =>  __('Example Background', 'options_framework_theme'),
-		'desc' => __('Change the background CSS.', 'options_framework_theme'),
-		'id' => 'example_background',
-		'std' => $background_defaults,
-		'type' => 'background' );
-
-	$options[] = array(
 		'name' => __('Multicheck', 'options_framework_theme'),
 		'desc' => __('Multicheck description.', 'options_framework_theme'),
 		'id' => 'example_multicheck',
 		'std' => $multicheck_defaults, // These items get checked by default
 		'type' => 'multicheck',
 		'options' => $multicheck_array);
-
-	$options[] = array(
-		'name' => __('Colorpicker', 'options_framework_theme'),
-		'desc' => __('No color selected by default.', 'options_framework_theme'),
-		'id' => 'example_colorpicker',
-		'std' => '',
-		'type' => 'color' );
-
-	$options[] = array( 'name' => __('Typography', 'options_framework_theme'),
-		'desc' => __('Example typography.', 'options_framework_theme'),
-		'id' => "example_typography",
-		'std' => $typography_defaults,
-		'type' => 'typography' );
-
-	$options[] = array(
-		'name' => __('Custom Typography', 'options_framework_theme'),
-		'desc' => __('Custom typography options.', 'options_framework_theme'),
-		'id' => "custom_typography",
-		'std' => $typography_defaults,
-		'type' => 'typography',
-		'options' => $typography_options );
-
-	$options[] = array(
-		'name' => __('Text Editor', 'options_framework_theme'),
-		'type' => 'heading' );
-
-	/**
-	 * For $settings options see:
-	 * http://codex.wordpress.org/Function_Reference/wp_editor
-	 *
-	 * 'media_buttons' are not supported as there is no post to attach items to
-	 * 'textarea_name' is set by the 'id' you choose
-	 */
-
-	$wp_editor_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 5,
-		'tinymce' => array( 'plugins' => 'wordpress' )
-	);
-
-	$options[] = array(
-		'name' => __('Default Text Editor', 'options_framework_theme'),
-		'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'options_framework_theme' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
-		'id' => 'example_editor',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings );
 
 	return $options;
 }

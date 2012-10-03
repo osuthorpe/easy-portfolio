@@ -22,7 +22,7 @@
 }
 .galleria-thumbnails-container {
     height: 30px;
-    bottom: 0px;
+    bottom: 30px;
     width: 100%;
     position: absolute;
     z-index: 5;

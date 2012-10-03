@@ -37,7 +37,6 @@ function maak_portfolio_columns($columns) {
 	$columns = array(
 		"cb" => "<input type=\"checkbox\" />",
     	"title" => "Portfolio Title",
-    	"portfolio-description" => "Description",
 		'portfolio-images' => 'Images',
 	);
 

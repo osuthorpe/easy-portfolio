@@ -22,7 +22,7 @@
 	<body <?php body_class(); ?>>
 		<div id="header" class="left clear">
 			<?php if ( of_get_option('bk_logo') == '') { ?>
-			    <h1 class="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+			    <h1 class="site-title"><a href="<?php echo home_url(); ?>"><?php echo of_get_option('bk_site_title') ?></a></h1>
 			<?php } else { ?>
 			    <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php echo of_get_option('bk_logo'); ?>" alt="<?php bloginfo( 'name' ); ?>"/></a>
 			<?php } ?>

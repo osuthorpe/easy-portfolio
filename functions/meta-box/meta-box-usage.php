@@ -44,22 +44,11 @@ $meta_boxes[] = array(
             'name' => 'Portfolio Description',
             'desc' => 'upload your portfolio images',
             'id' => $prefix . 'portfolio_desc',
-            'type' => 'textarea'					// image upload
-        ), // list of meta fields
-		array(
-			'name' => 'front-page',
-			'title' => 'Front Page',
-			'desc' => 'make this portfolio the first page portfolio?',
-			'id' => $prefix . 'is_front_page',
-			'type' => 'radio',
-			'options' => array(
-				'yes' => 'yes',
-				'no' => 'no'),
-			'std' => 'no',
-		),
+            'type' => 'textarea'
+        ),
 	),
 );
-		
+
 
 /********************* META BOX REGISTERING ***********************/
 

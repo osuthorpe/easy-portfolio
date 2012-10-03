@@ -8,15 +8,16 @@
         Custom Admin Styles
 -------------------------------*/
 
-function mytheme_enqueue_admin_style() {
+function bk_enqueue_admin_style() {
 
-     $admin_handle = 'mytheme_admin_stylesheet';
+     $admin_handle = 'bk_admin_stylesheet';
      $admin_stylesheet = get_template_directory_uri() . '/css/admin.css';
 
      wp_enqueue_style( $admin_handle, $admin_stylesheet );
 }
 
-add_action('admin_print_styles', 'mytheme_enqueue_admin_style', 11 );
+add_action('admin_print_styles', 'bk_enqueue_admin_style', 11 );
+
 add_theme_support( 'automatic-feed-links' );
 
 /*------------------------------
