@@ -42,6 +42,21 @@ function optionsframework_options() {
 		'five' => __('Waffle', 'options_framework_theme')
 	);
 
+	//boolean options
+	$boolean_array = array(
+		'true' => __('Yes', 'options_framework_theme'),
+		'false' => __('No', 'options_framework_theme')
+	);
+
+	//Trasition Options
+	$transition_array = array(
+		'fade' => __('fade', 'options_framework_theme'),
+		'flash' => __('flash', 'options_framework_theme'),
+		'pulse' => __('pulse', 'options_framework_theme'),
+		'slide' => __('slide', 'options_framework_theme'),
+		'fadeslide' => __('fadeslide', 'options_framework_theme')
+	);
+
 	// Multicheck Defaults
 	$multicheck_defaults = array(
 		'one' => '1',
@@ -245,127 +260,162 @@ function optionsframework_options() {
 		'std' => $body_typography_defaults,
 		'type' => 'typography' );
 
-	$options[] = array(
-		'name' => __('Text Editor', 'options_framework_theme'),
-		'type' => 'heading' );
-
-	/**
-	 * For $settings options see:
-	 * http://codex.wordpress.org/Function_Reference/wp_editor
-	 *
-	 * 'media_buttons' are not supported as there is no post to attach items to
-	 * 'textarea_name' is set by the 'id' you choose
+	/*
+	 *	Portfolios
 	 */
 
-	$wp_editor_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 5,
-		'tinymce' => array( 'plugins' => 'wordpress' )
-	);
+	$options[] = array(
+		'name' => __('Portfolios', 'options_framework_theme'),
+		'type' => 'heading' );
 
 	$options[] = array(
-		'name' => __('Custom Typography', 'options_framework_theme'),
-		'desc' => __('Custom typography options.', 'options_framework_theme'),
-		'id' => "custom_typography",
-		'std' => $typography_defaults,
-		'type' => 'typography',
-		'options' => $typography_options );
+		'name' =>  __('Portfolio Background', 'options_framework_theme'),
+		'desc' => __('Change the background for the Portfolio (if blank will be same as main background.', 'options_framework_theme'),
+		'id' => 'bk_portfolio_background',
+		'std' => $background_defaults,
+		'type' => 'background');
 
 	$options[] = array(
-		'name' => __('Default Text Editor', 'options_framework_theme'),
-		'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'options_framework_theme' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
-		'id' => 'example_editor',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings );
+		'name' => __('Crop Images', 'options_framework_theme'),
+		'desc' => __('If yes then all images are cropped to fit the portfolio frame', 'options_framework_theme'),
+		'id' => 'bk_standard_crop',
+		'std' => 'true',
+		'type' => 'radio',
+		'options' => $boolean_array,);
 
 	$options[] = array(
-		'name' => __('Input Text Mini', 'options_framework_theme'),
-		'desc' => __('A mini text input field.', 'options_framework_theme'),
-		'id' => 'example_text_mini',
-		'std' => 'Default',
+		'name' => __('Autoplay Slideshow', 'options_framework_theme'),
+		'desc' => __('Should the slideshow start automatically when the gallery is loaded', 'options_framework_theme'),
+		'id' => 'bk_standard_play',
+		'std' => 'false',
+		'type' => 'radio',
+		'options' => $boolean_array);
+
+	$options[] = array(
+		'name' => __('Transition', 'options_framework_theme'),
+		'desc' => __('Set the transition effect', 'options_framework_theme'),
+		'id' => 'bk_standard_transition',
+		'std' => 'fade',
+		'type' => 'select',
+		'class' => 'mini',
+		'options' => $transition_array);
+
+	$options[] = array(
+		'name' => __('Speed', 'options_framework_theme'),
+		'desc' => __('How long should each image apear in the slideshow (in Milliseconds)', 'options_framework_theme'),
+		'id' => 'bk_standard_speed',
+		'std' => '2000',
 		'class' => 'mini',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Input Text', 'options_framework_theme'),
-		'desc' => __('A text input field.', 'options_framework_theme'),
-		'id' => 'example_text',
-		'std' => 'Default Value',
+		'name' => __('Show Thumbnails', 'options_framework_theme'),
+		'desc' => __('If yes then thumbnails will be visible', 'options_framework_theme'),
+		'id' => 'bk_standard_thumbnails',
+		'std' => 'false',
+		'type' => 'radio',
+		'options' => $boolean_array);
+
+	$options[] = array(
+		'name' => __('Fullscreen Crop Images', 'options_framework_theme'),
+		'desc' => __('If yes then all images are cropped to fill the entire screen in fullscreen mode', 'options_framework_theme'),
+		'id' => 'bk_fullscreen_crop',
+		'std' => 'false',
+		'type' => 'radio',
+		'options' => $boolean_array,);
+
+	$options[] = array(
+		'name' => __('Fullscreen Transition', 'options_framework_theme'),
+		'desc' => __('Set the transition effect for fullscreen mode', 'options_framework_theme'),
+		'id' => 'bk_fullscreen_transition',
+		'std' => 'slide',
+		'type' => 'select',
+		'class' => 'mini',
+		'options' => $transition_array);
+
+	$options[] = array(
+		'name' => __('Fullscreen Show Thumbnails', 'options_framework_theme'),
+		'desc' => __('If yes then thumbnails will be visible', 'options_framework_theme'),
+		'id' => 'bk_fullscreen_thumbnails',
+		'std' => 'false',
+		'type' => 'radio',
+		'options' => $boolean_array);
+
+	/*
+	 *	Social Media
+	 */
+	$options[] = array(
+		'name' => __('Social Media', 'options_framework_theme'),
+		'type' => 'heading' );
+
+	$options[] = array(
+		'name' => __('Twitter', 'options_framework_theme'),
+		'desc' => __('Add your twitter name', 'options_framework_theme'),
+		'id' => 'bk_twitter',
+		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Textarea', 'options_framework_theme'),
-		'desc' => __('Textarea description.', 'options_framework_theme'),
-		'id' => 'example_textarea',
-		'std' => 'Default Text',
+		'name' => __('Facebook', 'options_framework_theme'),
+		'desc' => __('Add your twitter url', 'options_framework_theme'),
+		'id' => 'bk_facebook',
+		'std' => '',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('Flickr', 'options_framework_theme'),
+		'desc' => __('Add your flickr url', 'options_framework_theme'),
+		'id' => 'bk_flickr',
+		'std' => '',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('500px', 'options_framework_theme'),
+		'desc' => __('Add your 500px url', 'options_framework_theme'),
+		'id' => 'bk_500px',
+		'std' => '',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('Youtube', 'options_framework_theme'),
+		'desc' => __('Add your youtube url', 'options_framework_theme'),
+		'id' => 'bk_youtube',
+		'std' => '',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('Vimeo', 'options_framework_theme'),
+		'desc' => __('Add your Vimeo url', 'options_framework_theme'),
+		'id' => 'bk_vimeo',
+		'std' => '',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('Dribble', 'options_framework_theme'),
+		'desc' => __('Add your dribble url', 'options_framework_theme'),
+		'id' => 'bk_dribble',
+		'std' => '',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('Linkedin', 'options_framework_theme'),
+		'desc' => __('Add your Linkedin url', 'options_framework_theme'),
+		'id' => 'bk_linkedin',
+		'std' => '',
+		'type' => 'text');
+	/*
+	 *	Advanced
+	 */
+	$options[] = array(
+		'name' => __('Advanced', 'options_framework_theme'),
+		'type' => 'heading' );
+
+	$options[] = array(
+		'name' => __('Custom CSS', 'options_framework_theme'),
+		'desc' => __('Advanced users only. Enter your own css to overide any defaults in the theme.', 'options_framework_theme'),
+		'id' => 'bk_advanced_css',
+		'std' => '',
 		'type' => 'textarea');
-
-	$options[] = array(
-		'name' => __('Select a Category', 'options_framework_theme'),
-		'desc' => __('Passed an array of categories with cat_ID and cat_name', 'options_framework_theme'),
-		'id' => 'example_select_categories',
-		'type' => 'select',
-		'options' => $options_categories);
-
-	$options[] = array(
-		'name' => __('Select a Tag', 'options_check'),
-		'desc' => __('Passed an array of tags with term_id and term_name', 'options_check'),
-		'id' => 'example_select_tags',
-		'type' => 'select',
-		'options' => $options_tags);
-
-	$options[] = array(
-		'name' => __('Select a Page', 'options_framework_theme'),
-		'desc' => __('Passed an pages with ID and post_title', 'options_framework_theme'),
-		'id' => 'example_select_pages',
-		'type' => 'select',
-		'options' => $options_pages);
-
-	$options[] = array(
-		'name' => __('Example Info', 'options_framework_theme'),
-		'desc' => __('This is just some example information you can put in the panel.', 'options_framework_theme'),
-		'type' => 'info');
-
-	$options[] = array(
-		'name' => __('Input Checkbox', 'options_framework_theme'),
-		'desc' => __('Example checkbox, defaults to true.', 'options_framework_theme'),
-		'id' => 'example_checkbox',
-		'std' => '1',
-		'type' => 'checkbox');
-
-	$options[] = array(
-		'name' => __('Check to Show a Hidden Text Input', 'options_framework_theme'),
-		'desc' => __('Click here and see what happens.', 'options_framework_theme'),
-		'id' => 'example_showhidden',
-		'type' => 'checkbox');
-
-	$options[] = array(
-		'name' => __('Hidden Text Input', 'options_framework_theme'),
-		'desc' => __('This option is hidden unless activated by a checkbox click.', 'options_framework_theme'),
-		'id' => 'example_text_hidden',
-		'std' => 'Hello',
-		'class' => 'hidden',
-		'type' => 'text');
-
-	$options[] = array(
-		'name' => "Example Image Selector",
-		'desc' => "Images for layout.",
-		'id' => "example_images",
-		'std' => "2c-l-fixed",
-		'type' => "images",
-		'options' => array(
-			'1col-fixed' => $imagepath . '1col.png',
-			'2c-l-fixed' => $imagepath . '2cl.png',
-			'2c-r-fixed' => $imagepath . '2cr.png')
-	);
-
-	$options[] = array(
-		'name' => __('Multicheck', 'options_framework_theme'),
-		'desc' => __('Multicheck description.', 'options_framework_theme'),
-		'id' => 'example_multicheck',
-		'std' => $multicheck_defaults, // These items get checked by default
-		'type' => 'multicheck',
-		'options' => $multicheck_array);
 
 	return $options;
 }

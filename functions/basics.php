@@ -264,13 +264,6 @@ function bk_blog_favicon() {
 add_action('wp_head', 'bk_blog_favicon');
 
 
-// add a favicon for your admin
-function bk_admin_favicon() {
-    echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_bloginfo('stylesheet_directory').'/images/favicon.png" />';
-}
-add_action('admin_head', 'bk_admin_favicon');
-
-
 /*------------------------------------------
   remove version info from head and feeds
 ------------------------------------------*/
@@ -279,5 +272,25 @@ function bk_complete_version_removal() {
     return '';
 }
 add_filter('the_generator', 'complete_version_removal');
+
+
+/*------------------------------------------
+  User Styles for Theme
+------------------------------------------*/
+
+function bk_user_styles() {
+    $background = of_get_option('bk_main_background');
+    ?>
+    <style type="text/css">
+        body {
+            <?php if($background['image']) {
+                echo "background-image: url(" . $background['image'] . ");";
+            } else {
+                echo "background-color:" . $background['color'] . ";";
+            } ?>
+        }
+    </style>
+<?php }
+add_action('wp_head', 'bk_user_styles')
 
 ?>
