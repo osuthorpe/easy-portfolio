@@ -213,17 +213,22 @@ function optionsframework_options() {
 		'type' => 'background');
 
 	$options[] = array(
-		'name' => __('Icon Type', 'options_framework_theme'),
-		'desc' => __('Select dark for a light background, light for a darker background.', 'options_framework_theme'),
-		'id' => 'bk_icon_type',
-		'std' => 'dark',
-		'type' => 'select',
-		'class' => 'mini',
-		'options' => $icon_array);
+		'name' => __('Social Media Icons Color', 'options_framework_theme'),
+		'desc' => __('Color for the social media icon backgrounds.', 'options_framework_theme'),
+		'id' => 'bk_social_color',
+		'std' => '#222222',
+		'type' => 'color' );
+
+	$options[] = array(
+		'name' => __('Social Media Icons Hover Color', 'options_framework_theme'),
+		'desc' => __('Color for hovering over the social media icons.', 'options_framework_theme'),
+		'id' => 'bk_social_hover_color',
+		'std' => '#444444',
+		'type' => 'color' );
 
 	$options[] = array(
 		'name' => __('Accent Color', 'options_framework_theme'),
-		'desc' => __('Color for the lines in the design.', 'options_framework_theme'),
+		'desc' => __('Color for the accents in the design.', 'options_framework_theme'),
 		'id' => 'bk_accent_color',
 		'std' => '#222222',
 		'type' => 'color' );

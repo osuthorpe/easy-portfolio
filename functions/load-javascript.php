@@ -10,7 +10,6 @@ function bk_load_all_scripts() {
         wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', false, '1.7.1');
         wp_register_script('galleria', get_template_directory_uri().'/js/galleria-1.2.8.min.js', 'jquery');
         wp_register_script('mosaic', get_template_directory_uri().'/js/mosaic.1.0.1.min.js', 'jquery');
-
         wp_enqueue_script('jquery');
         wp_enqueue_script('galleria');
     }
@@ -44,7 +43,15 @@ function bk_jquery_scripts() { ?>
                 } else {
                     jQuery('#navigation').removeClass('closed').addClass('opened');
                 }
-            })
+            });
+            jQuery('#social-pull').click(function(e) {
+                e.preventDefault();
+                if (jQuery('#social').is('.opened')) {
+                    jQuery('#social').removeClass('opened').addClass('closed');
+                } else {
+                    jQuery('#social').removeClass('closed').addClass('opened');
+                }
+            });
         }
 
         function galleryHeight() {
@@ -65,7 +72,7 @@ function bk_jquery_scripts() { ?>
 
             if (viewportWidth < 767) {
                 var viewportHeight = jQuery(window).height();
-                viewportHeight = viewportHeight - 45;
+                viewportHeight = viewportHeight - 55;
                 jQuery('#galleria').height(viewportHeight);
             }
         };
@@ -80,24 +87,6 @@ function bk_jquery_scripts() { ?>
 
         });
 
-    <?php } if ( (is_singular('portfolio') || is_home()) && !is_admin() ) { ?>
-
-        function reloadGalleria() {
-            location.reload();
-        };
-
-        var resizeTimer;
-        $(window).resize(function() {
-            var w = jQuery(window).width();
-            var gWidth = jQuery('.galleria-container').width();
-
-            var full = $('.galleria-container').hasClass('fullscreen');
-
-            if (w < 1100 && !full) {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(reloadGalleria, 200);
-            }
-        });
 
     <?php } if (is_page_template('portfolios.php') && !is_admin() ) { ?>
 
@@ -107,6 +96,7 @@ function bk_jquery_scripts() { ?>
             $('.fade').mosaic();
         });
     <?php } ?>
+
     </script>
 <?php }
 

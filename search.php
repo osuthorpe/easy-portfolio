@@ -19,7 +19,7 @@
 
 		            <div class="content">
 		                <?php echo $excerpt; ?>
-		                <p class="tags"><?php the_tags('Tagged with: ',' • ',''); ?></p>
+		                <p class="tags"><?php the_tags('Tagged with: ',' , ',''); ?></p>
 		                <a class="more right" href="<?php the_permalink(); ?>">read more...</a>
 		            </div>
 

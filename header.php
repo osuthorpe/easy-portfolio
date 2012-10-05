@@ -26,11 +26,43 @@
 			<?php } else { ?>
 			    <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php echo of_get_option('bk_logo'); ?>" alt="<?php bloginfo( 'name' ); ?>"/></a>
 			<?php } ?>
+
+			<div id="social-pull">Menu</div>
+
 			<div id="pull">Menu</div>
+
+			<div id="social" class="closed">
+				<?php
+					if ( of_get_option('bk_twitter') ) {
+						echo '<a href="http://www.twitter.com/'. of_get_option('bk_twitter') .'" target="_blank" class="social-icon twitter">twitter</a>';
+					}
+					if ( of_get_option('bk_facebook') ) {
+						echo '<a href="'. of_get_option('bk_facebook') .'" target="_blank" class="social-icon facebook">facebook</a>';
+					}
+					if ( of_get_option('bk_flickr') ) {
+						echo '<a href="'. of_get_option('bk_flickr') .'" target="_blank" class="social-icon flickr">flickr</a>';
+					}
+					if ( of_get_option('bk_500px') ) {
+						echo '<a href="'. of_get_option('bk_500px') .'" target="_blank" class="social-icon five-hundred">500px</a>';
+					}
+					if ( of_get_option('bk_dribble') ) {
+						echo '<a href="'. of_get_option('bk_dribble') .'" target="_blank" class="social-icon dribble">dribble</a>';
+					}
+					if ( of_get_option('bk_linkedin') ) {
+						echo '<a href="'. of_get_option('bk_linkedin') .'" target="_blank" class="social-icon linkedin">linkedin</a>';
+					}
+					if ( of_get_option('bk_youtube') ) {
+						echo '<a href="'. of_get_option('bk_youtube') .'" target="_blank" class="social-icon youtube">youtube</a>';
+					}
+					if ( of_get_option('bk_vimeo') ) {
+						echo '<a href="'. of_get_option('bk_vimeo') .'" target="_blank" class="social-icon vimeo">vimeo</a>';
+					}
+				?>
+			</div>
 		</div>
 
 		<div id="wrapper">
 
 			<div id="navigation" class="closed">
-				<?php	get_template_part( 'menu', 'index' ); ?>
+				<?php get_template_part( 'menu', 'index' ); ?>
 			</div>
