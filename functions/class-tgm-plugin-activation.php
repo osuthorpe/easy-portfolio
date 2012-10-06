@@ -333,7 +333,6 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			foreach ( $this->plugins as $plugin ) {
 				if ( ! is_plugin_active( $plugin['file_path'] ) ) {
 					add_theme_page(
-						//$this->parent_menu_slug,				// Parent menu slug
 						$this->strings['page_title'],           // Page title
 						$this->strings['menu_title'],           // Menu title
 						'edit_theme_options',                   // Capability
@@ -371,7 +370,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 				<?php $plugin_table->prepare_items(); ?>
 
-				<?php if ( isset( $this->message ) ) _e( wp_kses_post( $this->message ), 'bk-media' ); ?>
+				<?php if ( isset( $this->message ) ) wp_kses_post( $this->message ); ?>
 
 				<form id="tgmpa-plugins" action="" method="post">
             		<input type="hidden" name="tgmpa-page" value="<?php echo $this->menu; ?>" />
@@ -2039,7 +2038,7 @@ if ( ! class_exists( 'WP_Upgrader' ) && ( isset( $_GET[sanitize_key( 'page' )] )
 				$complete = array();
 				foreach ( TGM_Plugin_Activation::$instance->plugins as $plugin ) {
 					if ( ! is_plugin_active( $plugin['file_path'] ) ) {
-						echo '<p><a href="' . add_query_arg( 'page', TGM_Plugin_Activation::$instance->menu, admin_url( TGM_Plugin_Activation::$instance->parent_url_slug ) ) . '" title="' . esc_attr( TGM_Plugin_Activation::$instance->strings['return'] ) . '" target="_parent">' . __( TGM_Plugin_Activation::$instance->strings['return'], 'bk-media' ) . '</a></p>';
+						echo '<p><a href="' . add_query_arg( 'page', TGM_Plugin_Activation::$instance->menu, admin_url( TGM_Plugin_Activation::$instance->parent_url_slug ) ) . '" title="' . esc_attr( TGM_Plugin_Activation::$instance->strings['return'] ) . '" target="_parent">' . TGM_Plugin_Activation::$instance->strings['return'] . '</a></p>';
 						$complete[] = $plugin;
 						break;
 					}

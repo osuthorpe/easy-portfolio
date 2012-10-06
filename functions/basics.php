@@ -59,33 +59,6 @@ function new_widgets_init() {
         'before_title' => '<h2 class="widgettitle">',
         'after_title' => '</h2>',
     ) );
-    register_sidebar( array(
-        'name' => 'Footer Area One',
-        'id' => 'foot_one',
-        'description' => __( 'footer area 1','bk-media'),
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
-        'after_widget' => "</li>",
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>',
-    ) );
-    register_sidebar( array(
-        'name' => 'Footer Area Two',
-        'id' => 'foot_two',
-        'description' => __( 'footer area 2','bk-media'),
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
-        'after_widget' => "</li>",
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>',
-    ) );
-    register_sidebar( array(
-        'name' => 'Footer Area Three',
-        'id' => 'foot_three',
-        'description' => __( 'footer area 3','bk-media'),
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
-        'after_widget' => "</li>",
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>',
-    ) );
 }
 
 add_action( 'init', 'new_widgets_init' );

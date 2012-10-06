@@ -125,9 +125,6 @@ if(isset($_POST['submitted'])) {
 	<div id="sidebar">
 		<ul><?php get_sidebar(); ?></ul>
 	</div>
-
 </div>
-
-</div><!-- Close Wrapper -->
 
 <?php get_footer(); ?>

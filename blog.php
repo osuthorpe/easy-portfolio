@@ -50,6 +50,5 @@ Template Name: Blog
 	<div id="sidebar">
 		<ul><?php get_sidebar(); ?></ul>
 	</div>
-</div>
 
 <?php get_footer(); ?>

@@ -291,7 +291,7 @@ embed {
 
 #wrapper {
   width: 960px;
-  margin: 10px auto 20px;
+  margin: 10px auto 0px;
   display: block;
   overflow: hidden;
 }
@@ -822,6 +822,7 @@ h3#reply-title {
 #blog-content {
   width: 620px;
   margin-right: 20px;
+  padding-bottom: 10px;
   float: left;
   display: block;
 }
@@ -852,6 +853,10 @@ h3#reply-title {
 #blog-content .single-content .meta {
   color: #a8a8a8;
   margin-bottom: 5px;
+}
+
+.single #blog-content .single-content {
+  border-bottom: none;
 }
 
 #blog-content .single-content .post-tags p {
@@ -1086,6 +1091,19 @@ input#searchsubmit:hover {
   width: 100%;
 }
 
+
+/*-----------------------------------------------
+7.    Footer
+-----------------------------------------------*/
+
+#footer {
+  width: 960px;
+  display: block;
+  overflow: hidden;
+  margin: auto;
+  font-size: .7em;
+}
+
 /*-----------------------------------------------
 7.    Retina Display Settings
 -----------------------------------------------*/
@@ -1123,7 +1141,8 @@ input#searchsubmit:hover {
     width: 748px;
   }
 
-  #wrapper {
+  #wrapper,
+  #footer {
     width: 748px;
     margin: auto;
   }
@@ -1259,7 +1278,8 @@ input#searchsubmit:hover {
     #header,
     #wrapper,
     #main-content,
-    #navigation {
+    #navigation,
+    #footer {
       width: 460px;
     }
 
@@ -1327,7 +1347,8 @@ input#searchsubmit:hover {
     #wrapper,
     #main-content,
     #navigation,
-    #portfolio-content {
+    #portfolio-content,
+    #footer {
       width: 300px;
     }
 
