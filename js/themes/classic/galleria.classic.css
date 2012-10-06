@@ -21,9 +21,9 @@
     overflow:hidden;
 }
 .galleria-thumbnails-container {
-    height: 30px;
-    bottom: 30px;
+    bottom: 32px;
     width: 100%;
+    background: #ffffff;
     position: absolute;
     z-index: 5;
 }

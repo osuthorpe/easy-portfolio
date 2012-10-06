@@ -34,7 +34,24 @@
 			</div>
 			<script>
 				Galleria.loadTheme('<?php echo get_template_directory_uri()."/js/themes/classic/galleria.classic.js" ?>');
-				Galleria.run('#galleria');
+				Galleria.run('#galleria', {
+				    extend: function() {
+				        var gallery = this,
+				            w,h;
+				        $(window).resize(function() {
+				        	viewPortWidth = $(window).width();
+				            w = $('#main-content').width();
+				            if (480 < viewPortWidth < 960) {
+				            	h = $(window).height() - $('#header').height() - $('#navigation').height() - 15;
+				            }
+				            if (viewPortWidth > 960) {
+				            	h = $(window).height() - $('#header').height() - 25;
+				            }
+				            $('#galleria').add('.galleria-container').width(w).height(h);
+				            gallery.rescale(w, h);
+				        });
+				    }
+				});
 	    	</script>
 		<?php endwhile; ?>
 	</div>

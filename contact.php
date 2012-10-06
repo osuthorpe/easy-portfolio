@@ -75,9 +75,10 @@ if(isset($_POST['submitted'])) {
                         <div class="contact-address">
                         	<?php if (rwmb_meta( 'bk_address_contact' )) {
                         		echo '<h5>mailing address</h5>';
-                        		echo '<p>'.rwmb_meta( 'bk_street_contact' ).'</br>';
-                        		echo rwmb_meta( 'bk_city_contact' ).'</br>';
-                        		echo rwmb_meta( 'bk_country_contact' ).'</p>';
+                        		echo '<p>'.of_get_option('bk_site_title').'</br>'
+                        	      	  .rwmb_meta( 'bk_street_contact' ).'</br>'
+                        			  .rwmb_meta( 'bk_city_contact' ).'</br>'
+                        			  .rwmb_meta( 'bk_country_contact' ).'</p>';
                         	}
 
                         	if (rwmb_meta( 'bk_phone_contact' )) {
@@ -93,26 +94,26 @@ if(isset($_POST['submitted'])) {
                         <div class="contact-form">
                         	<h5>Contact Us</h5>
 	                        <?php if(isset($hasError) || isset($captchaError)) { ?>
-	                            <p class="error"><?php _e('Sorry, an error occured.', 'framework') ?><p>
+	                            <p class="error"><?php _e('Sorry, an error occured.', 'bk-media') ?><p>
 	                        <?php } ?>
 
 	                        <form action="<?php the_permalink(); ?>" id="contactForm" method="post">
-	                                <input type="text" name="contactName" placeholder="Name" id="contactName" value="<?php if(isset($_POST['contactName'])) echo $_POST['contactName'];?>" class="required requiredField" />
+	                                <input type="text" name="contactName" placeholder="your name" id="contactName" value="<?php if(isset($_POST['contactName'])) echo $_POST['contactName'];?>" class="required requiredField" />
 	                                <?php if($nameError != '') { ?>
 	                                    <span class="error"><?php echo $nameError; ?></span>
 	                                <?php } ?>
-	                                <input type="text" name="email" placeholder="email" id="email" value="<?php if(isset($_POST['email']))  echo $_POST['email'];?>" class="required requiredField email" />
+	                                <input type="text" name="email" placeholder="your email" id="email" value="<?php if(isset($_POST['email']))  echo $_POST['email'];?>" class="required requiredField email" />
 	                                <?php if($emailError != '') { ?>
 	                                    <span class="error"><?php echo $emailError; ?></span>
 	                                <?php } ?>
 
-	                                <textarea name="comments" placeholder="enter message here" id="commentsText" rows="10" cols="30" class="required requiredField"><?php if(isset($_POST['comments'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['comments']); } else { echo $_POST['comments']; } } ?></textarea>
+	                                <textarea name="comments" placeholder="message" id="commentsText" rows="10" cols="30" class="required requiredField"><?php if(isset($_POST['comments'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['comments']); } else { echo $_POST['comments']; } } ?></textarea>
 	                                <?php if($commentError != '') { ?>
 	                                    <span class="error"><?php echo $commentError; ?></span>
 	                                <?php } ?>
 
 	                                <input type="hidden" name="submitted" id="submitted" value="true" />
-	                                <button class="button-message" type="submit"><?php _e('Send Email', 'framework') ?></button>
+	                                <button class="button" type="submit"><?php _e('Send Email', 'bk-media') ?></button>
 	                        </form>
 	                    </div>
                     <?php } ?>

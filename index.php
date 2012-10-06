@@ -44,8 +44,15 @@
 					        var gallery = this,
 					            w,h;
 					        $(window).resize(function() {
+					        	viewPortWidth = $(window).width();
 					            w = $('#main-content').width();
-					            h = $(this).height() - $('#header').height() - 20;
+					            h = 0;
+					            if (480 < viewPortWidth < 960) {
+					            	h = $(window).height() - $('#header').height() - $('#navigation').height() - 15;
+					            }
+					            if (viewPortWidth > 960) {
+					            	h = $(window).height() - $('#header').height() - 25;
+					            }
 					            $('#galleria').add('.galleria-container').width(w).height(h);
 					            gallery.rescale(w, h);
 					        });

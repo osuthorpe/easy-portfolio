@@ -30,4 +30,11 @@ if( file_exists(get_template_directory().'/functions/meta-box/meta-box.php') )
 if( file_exists(get_template_directory().'/functions/meta-box/meta-box-usage.php') )
 	include_once(get_template_directory().'/functions/meta-box/meta-box-usage.php');
 
+// Load TGM Required Plugins Scripts
+if( file_exists(get_template_directory().'/functions/class-tgm-plugin-activation.php') )
+	require_once(get_template_directory().'/functions/class-tgm-plugin-activation.php');
+
+// Twitter Widget Plugin
+if( file_exists(get_template_directory().'/functions/twitter-widget.php') )
+	include_once(get_template_directory().'/functions/twitter-widget.php');
 ?>

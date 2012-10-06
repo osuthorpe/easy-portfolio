@@ -54,25 +54,25 @@ function bk_jquery_scripts() { ?>
             });
         }
 
-        function galleryHeight() {
+        function galleryHeight(viewportWidth) {
 
             var viewportWidth = jQuery(window).width();
 
             if (viewportWidth > 960) {
                 var viewportHeight = jQuery(window).height();
-                viewportHeight = viewportHeight - 80;
+                viewportHeight = viewportHeight - $('#header').height() - 25;
                 jQuery('#galleria').height(viewportHeight);
             }
 
             if (viewportWidth < 960) {
                 var viewportHeight = jQuery(window).height();
-                viewportHeight = viewportHeight - 115;
+                viewportHeight = viewportHeight - $('#header').height() - $('#navigation').height() - 15;
                 jQuery('#galleria').height(viewportHeight);
             }
 
             if (viewportWidth < 767) {
                 var viewportHeight = jQuery(window).height();
-                viewportHeight = viewportHeight - 55;
+                viewportHeight = viewportHeight - $('#header').height()  - 12;
                 jQuery('#galleria').height(viewportHeight);
             }
         };
