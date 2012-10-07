@@ -1270,15 +1270,14 @@ input#searchsubmit:hover {
 -----------------------------------------------*/
 
 @media only screen and (max-width: 958px) {
-  #header {
-    margin:  0 auto;
-    width: 748px;
-  }
 
   #wrapper,
+  #header,
+  #navigation,
+  #main-content,
   #footer {
-    width: 748px;
-    margin: auto;
+    width: 728px;
+    margin: 0 auto;
   }
 
   #social {
@@ -1291,7 +1290,6 @@ input#searchsubmit:hover {
   }
 
   #navigation {
-    width: 748px;
     margin: auto;
     display: block;
     overflow: hidden;
@@ -1315,12 +1313,11 @@ input#searchsubmit:hover {
 
   #main-content {
     float: none;
-    width: 748px;
     margin: auto;
   }
 
   #blog-content {
-    width: 530px;
+    width: 510px;
     margin-bottom: 20px;
   }
 

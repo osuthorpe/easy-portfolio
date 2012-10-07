@@ -20,6 +20,11 @@ add_action('admin_print_styles', 'bk_enqueue_admin_style', 11 );
 
 add_theme_support( 'automatic-feed-links' );
 
+function admin_favicon() {
+    echo '<link rel="shortcut icon" type="image/png" href="'.of_get_option('bk_favicon').'" />';
+}
+add_action('admin_head', 'admin_favicon');
+
 /*------------------------------
         Menu Support
 -------------------------------*/

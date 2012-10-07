@@ -53,21 +53,24 @@
 				        var gallery = this,
 				            w,h;
 				        $(window).resize(function() {
-				        	viewPortWidth = $(window).width();
-				            w = $('#main-content').width();
-				            h = 0;
-				            if (480 < viewPortWidth < 960) {
-				            	h = $(window).height() - $('#header').height() - $('#navigation').height() - 25;
-				            }
-				            if (viewPortWidth > 960) {
-				            	h = $(window).height() - $('#header').height() - 35;
-				            }
-				            $('#galleria').add('.galleria-container').width(w).height(h);
-				            gallery.rescale(w, h);
+				        	var is_fullscreen = $('.galleria-fullscreen').hasClass('open');
+
+				        	if (!is_fullscreen) {
+				        		viewPortWidth = $(window).width();
+					            w = $('#main-content').width();
+					            h = 0;
+					            if (480 < viewPortWidth < 960) {
+					            	h = $(window).height() - $('#header').height() - $('#navigation').height() - 30;
+					            }
+					            if (viewPortWidth > 960) {
+					            	h = $(window).height() - $('#header').height() - 35;
+					            }
+					            $('#galleria').add('.galleria-container').width(w).height(h);
+					            gallery.rescale(w, h);
+					        }
 				        });
 				    }
 				});
-
 	    	</script>
 		<?php endwhile; ?>
 	</div>

@@ -172,7 +172,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('Favicon', 'options_framework_theme'),
-		'desc' => __('Upload a favicon to display next to your url in the address bar *Required Dimentions* (Width: 16px, Height: 16px).', 'options_framework_theme'),
+		'desc' => __('Upload a favicon to display next to your url in the address bar *Required Dimentions* (Width: 32px, Height: 32px).', 'options_framework_theme'),
 		'id' => 'bk_favicon',
 		'std' => 'http://dev.alexthorpe.com/wp-content/uploads/2012/10/picture.png',
 		'type' => 'upload');

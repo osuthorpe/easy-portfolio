@@ -60,19 +60,19 @@ function bk_jquery_scripts() { ?>
 
             if (viewportWidth > 960) {
                 var viewportHeight = jQuery(window).height();
-                viewportHeight = viewportHeight - $('#header').height() - 35;
+                viewportHeight = viewportHeight - $('#header').height() - 45;
                 jQuery('#galleria').height(viewportHeight);
             }
 
             if (viewportWidth < 960) {
                 var viewportHeight = jQuery(window).height();
-                viewportHeight = viewportHeight - $('#header').height() - $('#navigation').height() - 15;
+                viewportHeight = viewportHeight - $('#header').height() - $('#navigation').height() - 30;
                 jQuery('#galleria').height(viewportHeight);
             }
 
             if (viewportWidth < 767) {
                 var viewportHeight = jQuery(window).height();
-                viewportHeight = viewportHeight - $('#header').height()  - 22;
+                viewportHeight = viewportHeight - $('#header').height()  - 30;
                 jQuery('#galleria').height(viewportHeight);
             }
         };
