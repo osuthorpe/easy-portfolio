@@ -41,6 +41,14 @@
 			<script>
 				Galleria.loadTheme('<?php echo get_template_directory_uri()."/js/themes/classic/galleria.classic.js" ?>');
 				Galleria.run('#galleria', {
+					transition: <?php echo "'".of_get_option('bk_standard_transition')."'"; ?>,
+			        touchTransition: 'slide',
+			        fullscreenTransition: <?php echo "'".of_get_option('bk_fullscreen_transition')."'"; ?>,
+			        fullscreenCrop: <?php echo of_get_option('bk_fullscreen_crop'); ?>,
+			        thumbnails: <?php echo of_get_option('bk_standard_thumbnails'); ?>,
+			        responsive: false,
+			        autoplay: <?php echo of_get_option('bk_standard_play'); ?>,
+			        imageCrop: <?php echo of_get_option('bk_standard_crop'); ?>,
 				    extend: function() {
 				        var gallery = this,
 				            w,h;
@@ -49,10 +57,10 @@
 				            w = $('#main-content').width();
 				            h = 0;
 				            if (480 < viewPortWidth < 960) {
-				            	h = $(window).height() - $('#header').height() - $('#navigation').height() - 15;
+				            	h = $(window).height() - $('#header').height() - $('#navigation').height() - 25;
 				            }
 				            if (viewPortWidth > 960) {
-				            	h = $(window).height() - $('#header').height() - 25;
+				            	h = $(window).height() - $('#header').height() - 35;
 				            }
 				            $('#galleria').add('.galleria-container').width(w).height(h);
 				            gallery.rescale(w, h);

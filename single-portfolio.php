@@ -42,10 +42,10 @@
 			        	viewPortWidth = $(window).width();
 			            w = $('#main-content').width();
 			            if (480 < viewPortWidth < 960) {
-			            	h = $(window).height() - $('#header').height() - $('#navigation').height() - 15;
+			            	h = $(window).height() - $('#header').height() - $('#navigation').height() - 25;
 			            }
 			            if (viewPortWidth > 960) {
-			            	h = $(window).height() - $('#header').height() - 25;
+			            	h = $(window).height() - $('#header').height() - 35;
 			            }
 			            $('#galleria').add('.galleria-container').width(w).height(h);
 			            gallery.rescale(w, h);

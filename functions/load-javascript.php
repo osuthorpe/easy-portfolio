@@ -60,7 +60,7 @@ function bk_jquery_scripts() { ?>
 
             if (viewportWidth > 960) {
                 var viewportHeight = jQuery(window).height();
-                viewportHeight = viewportHeight - $('#header').height() - 25;
+                viewportHeight = viewportHeight - $('#header').height() - 35;
                 jQuery('#galleria').height(viewportHeight);
             }
 
@@ -72,7 +72,7 @@ function bk_jquery_scripts() { ?>
 
             if (viewportWidth < 767) {
                 var viewportHeight = jQuery(window).height();
-                viewportHeight = viewportHeight - $('#header').height()  - 12;
+                viewportHeight = viewportHeight - $('#header').height()  - 22;
                 jQuery('#galleria').height(viewportHeight);
             }
         };

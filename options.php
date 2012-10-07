@@ -72,6 +72,12 @@ function optionsframework_options() {
 		'attachment'=>'scroll' );
 
 	// Typography Defaults
+	$header_typography_defaults = array(
+		'size' => '30px',
+		'face' => 'georgia',
+		'style' => 'normal',
+		'color' => '#222222' );
+
 	$title_typography_defaults = array(
 		'size' => '15px',
 		'face' => 'georgia',
@@ -165,15 +171,17 @@ function optionsframework_options() {
 		'type' => 'upload');
 
 	$options[] = array(
-		'name' => __('Mobile App Icon', 'options_framework_theme'),
-		'desc' => __('Upload an icon for mobile home screens [Width: 57px, Height: 57px].', 'options_framework_theme'),
-		'id' => 'bk_mobile_icon',
+		'name' => __('Favicon', 'options_framework_theme'),
+		'desc' => __('Upload a favicon to display next to your url in the address bar *Required Dimentions* (Width: 16px, Height: 16px).', 'options_framework_theme'),
+		'id' => 'bk_favicon',
+		'std' => 'http://dev.alexthorpe.com/wp-content/uploads/2012/10/picture.png',
 		'type' => 'upload');
 
 	$options[] = array(
-		'name' => __('Mobile App Icon HD', 'options_framework_theme'),
-		'desc' => __('Upload a larger icon for tablets and high resolution devices [Width: 104px, Height: 104px].', 'options_framework_theme'),
-		'id' => 'bk_mobile_icon_hd',
+		'name' => __('Mobile App Icon', 'options_framework_theme'),
+		'desc' => __('Upload an icon for mobile home screens *Required Dimentions* (Width: 144px, Height: 144px).', 'options_framework_theme'),
+		'id' => 'bk_mobile_icon',
+		'std' => 'http://dev.alexthorpe.com/wp-content/uploads/2012/10/web-app-icon.png',
 		'type' => 'upload');
 
 	$options[] = array(
@@ -192,10 +200,10 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('Google Tracking Code', 'options_framework_theme'),
-		'desc' => __('Copy and paste your google tracking code here, should start with XA-.', 'options_framework_theme'),
+		'desc' => __('Copy and paste your google tracking code here, should start with UA-.', 'options_framework_theme'),
 		'id' => 'bk_google_code',
 		'std' => '',
-		'type' => 'textarea');
+		'type' => 'text');
 
 	/*
 	 *	Styles & Colors
@@ -230,7 +238,7 @@ function optionsframework_options() {
 		'name' => __('Accent Color', 'options_framework_theme'),
 		'desc' => __('Color for the accents in the design.', 'options_framework_theme'),
 		'id' => 'bk_accent_color',
-		'std' => '#222222',
+		'std' => '#e9e9e9',
 		'type' => 'color' );
 
 	$options[] = array(
@@ -246,6 +254,12 @@ function optionsframework_options() {
 		'id' => 'bk_link_hover_color',
 		'std' => '#444444',
 		'type' => 'color' );
+
+	$options[] = array( 'name' => __('Header Typography', 'options_framework_theme'),
+		'desc' => __('Type settings for the header of the site.', 'options_framework_theme'),
+		'id' => "bk_header_type",
+		'std' => $header_typography_defaults,
+		'type' => 'typography' );
 
 	$options[] = array( 'name' => __('Title Typography', 'options_framework_theme'),
 		'desc' => __('Type settings for the title fields on the site.', 'options_framework_theme'),
@@ -337,14 +351,6 @@ function optionsframework_options() {
 		'type' => 'select',
 		'class' => 'mini',
 		'options' => $transition_array);
-
-	$options[] = array(
-		'name' => __('Fullscreen Show Thumbnails', 'options_framework_theme'),
-		'desc' => __('If yes then thumbnails will be visible', 'options_framework_theme'),
-		'id' => 'bk_fullscreen_thumbnails',
-		'std' => 'false',
-		'type' => 'radio',
-		'options' => $boolean_array);
 
 	/*
 	 *	Social Media

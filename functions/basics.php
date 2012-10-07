@@ -215,27 +215,16 @@ remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
        Sets custom excerpt length
 ------------------------------------------*/
 
-function bk_custom_excerpt_length($length) {
-    return 200;
-}
-add_filter('excerpt_length', 'bk_custom_excerpt_length');
+// function bk_custom_excerpt_length($length) {
+//     return 200;
+// }
+// add_filter('excerpt_length', 'bk_custom_excerpt_length');
 
-function new_excerpt_more($more) {
-    global $post;
-    return '...';
-}
-add_filter('excerpt_more', 'new_excerpt_more');
-
-/*------------------------------------------
-       Sets the custom favicon
-------------------------------------------*/
-
-// add a favicon
-function bk_blog_favicon() {
-    echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_bloginfo('wpurl').'/favicon.ico" />';
-}
-add_action('wp_head', 'bk_blog_favicon');
-
+// function new_excerpt_more($more) {
+//     global $post;
+//     return '...';
+// }
+// add_filter('excerpt_more', 'new_excerpt_more');
 
 /*------------------------------------------
   remove version info from head and feeds
@@ -253,6 +242,8 @@ add_filter('the_generator', 'complete_version_removal');
 
 function bk_user_styles() {
     $background = of_get_option('bk_main_background');
+    $header = of_get_option('bk_header_type');
+    $nav = of_get_option('bk_menu_type');
     ?>
     <style type="text/css">
         body {
@@ -261,6 +252,24 @@ function bk_user_styles() {
             } else {
                 echo "background-color:" . $background['color'] . ";";
             } ?>
+        }
+        #header a {
+            font-size: <?php echo $header['size']; ?>;
+            font-family: <?php echo "'".$header['face']."'"; ?>;
+            font-style: <?php echo $header['style']; ?>;
+            color: <?php echo $header['color']; ?>;
+        }
+        #navigation li a {
+            font-size: <?php echo $nav['size']; ?>;
+            font-family: <?php echo "'".$nav['face']."'"; ?>;
+            font-style: <?php echo $nav['style']; ?>;
+            color: <?php echo $nav['color']; ?>;
+        }
+        a {
+            color: <?php echo of_get_option('bk_link_color'); ?>;
+        }
+        a:hover {
+            color: <?php echo of_get_option('bk_link_hover_color'); ?>;
         }
     </style>
 <?php }
