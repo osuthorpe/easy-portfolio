@@ -20,10 +20,28 @@ add_action('admin_print_styles', 'bk_enqueue_admin_style', 11 );
 
 add_theme_support( 'automatic-feed-links' );
 
-function admin_favicon() {
+function bk_admin_favicon() {
     echo '<link rel="shortcut icon" type="image/png" href="'.of_get_option('bk_favicon').'" />';
 }
-add_action('admin_head', 'admin_favicon');
+add_action('admin_head', 'bk_admin_favicon');
+
+function bk_portfolio_icons() { ?>
+    <style type="text/css" media="screen">
+        #menu-posts-portfolio .wp-menu-image {
+            background: url(<?php bloginfo('template_url') ?>/images/photo-album.png) no-repeat 7px -17px !important;
+            background-size: 16px 40px;
+        }
+        #menu-posts-portfolio:hover .wp-menu-image, #menu-posts-portfolio.wp-has-current-submenu .wp-menu-image {
+            background-position:7px 7px !important;
+        }
+        #icon-edit.icon32-posts-portfolio {
+            background: url(<?php bloginfo('template_url') ?>/images/portfolio-32x32.png) no-repeat 7px 3px;
+            background-size: 32px 32px;
+        }
+    </style>
+<?php }
+
+add_action( 'admin_head', 'bk_portfolio_icons' );
 
 /*------------------------------
         Menu Support
@@ -68,7 +86,7 @@ function new_widgets_init() {
 
 add_action( 'init', 'new_widgets_init' );
 
-function my_search_form( $form ) {
+function bk_search_form( $form ) {
 
     $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
     <div><label class="screen-reader-text" for="s">' . __('Search for:','bk-media') . '</label>
@@ -80,7 +98,7 @@ function my_search_form( $form ) {
     return $form;
 }
 
-add_filter( 'get_search_form', 'my_search_form' );
+add_filter( 'get_search_form', 'bk_search_form' );
 
 /*-----------------------------------------
       Add Post Thumbnails Support
@@ -96,10 +114,25 @@ if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
 }
 
 /*-----------------------------------------
+      Galleria Video Shortcode
+-----------------------------------------*/
+
+function bk_galleria_video($atts, $content) {
+    return '<a href="'.$content.'"><span class="video">Watch the Video</span></a>';
+}
+
+function bk_register_shortcodes() {
+   add_shortcode('video', 'bk_galleria_video');
+}
+
+add_action( 'init', 'bk_register_shortcodes');
+
+
+/*-----------------------------------------
       Excerpt Settings
 -----------------------------------------*/
 
-function custom_wp_trim_excerpt($text) {
+function bk_wp_trim_excerpt($text) {
     $raw_excerpt = $text;
     if ( '' == $text ) {
         //Retrieve the post content.
@@ -111,7 +144,7 @@ function custom_wp_trim_excerpt($text) {
         $text = apply_filters('the_content', $text);
         $text = str_replace(']]>', ']]&gt;', $text);
 
-        $allowed_tags = '<p>,<a>,<em>,<strong>'; /*** MODIFY THIS. Add the allowed HTML tags separated by a comma.***/
+        $allowed_tags = '<p>,<a>,<em>,<strong>,<img>'; /*** MODIFY THIS. Add the allowed HTML tags separated by a comma.***/
         $text = strip_tags($text, $allowed_tags);
 
         $excerpt_word_count = 200; /*** MODIFY THIS. change the excerpt word count to any integer you like.***/
@@ -132,7 +165,7 @@ function custom_wp_trim_excerpt($text) {
     return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);
 }
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'custom_wp_trim_excerpt');
+add_filter('get_the_excerpt', 'bk_wp_trim_excerpt');
 
 /*-----------------------------------------
        enable threaded comments
@@ -192,10 +225,10 @@ add_filter('widget_text', 'do_shortcode');
 /*  RESPONSIVE IMAGE FUNCTIONS
 /*-----------------------------------------------------------------------------------*/
 
-add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
-add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );
+add_filter( 'post_thumbnail_html', 'bk_remove_thumbnail_dimensions', 10 );
+add_filter( 'image_send_to_editor', 'bk_remove_thumbnail_dimensions', 10 );
 
-function remove_thumbnail_dimensions( $html ) {
+function bk_remove_thumbnail_dimensions( $html ) {
         $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
         return $html;
 }
@@ -214,23 +247,6 @@ remove_action('wp_head', 'start_post_rel_link', 10, 0);
 remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
-
-
-/*------------------------------------------
-       Sets custom excerpt length
-------------------------------------------*/
-
-// function bk_custom_excerpt_length($length) {
-//     return 200;
-// }
-// add_filter('excerpt_length', 'bk_custom_excerpt_length');
-
-// function new_excerpt_more($more) {
-//     global $post;
-//     return '...';
-// }
-// add_filter('excerpt_more', 'new_excerpt_more');
-
 /*------------------------------------------
   remove version info from head and feeds
 ------------------------------------------*/
@@ -238,7 +254,7 @@ remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 function bk_complete_version_removal() {
     return '';
 }
-add_filter('the_generator', 'complete_version_removal');
+add_filter('the_generator', 'bk_complete_version_removal');
 
 
 /*------------------------------------------
@@ -285,7 +301,6 @@ add_action('wp_head', 'bk_user_styles');
   TGM Plugin Activation Scripts
 ------------------------------------------*/
 
-add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
  *
@@ -298,7 +313,7 @@ add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function my_theme_register_required_plugins() {
+function bk_register_required_plugins() {
 
     /**
      * Array of plugin arrays. Required keys are name and slug.
@@ -361,5 +376,7 @@ function my_theme_register_required_plugins() {
     tgmpa( $plugins, $config );
 
 }
+
+add_action( 'tgmpa_register', 'bk_register_required_plugins' );
 
 ?>

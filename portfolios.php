@@ -24,7 +24,12 @@ Template Name: Porfolios
 
 		<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 	</div>
+
     <?php endwhile; ?>
+</div>
+
+<div id="sidebar">
+	<ul><?php get_sidebar(); ?></ul>
 </div>
 
 <?php get_footer(); ?>

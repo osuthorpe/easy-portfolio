@@ -38,11 +38,17 @@ $meta_boxes[] = array(
             'name' => 'Portfolio Images',
             'desc' => 'upload your portfolio images',
             'id' => $prefix . 'photo',
-            'type' => 'plupload_image'					// image upload
+            'type' => 'plupload_image'
+        ),
+        array(
+            'name' => 'Portfolio Videos',
+            'desc' => 'Place each video link in between the video shortcode. </br> Example: [video]http://www.youttube.com/my-video[/video]',
+            'id' => $prefix . 'video',
+            'type' => 'textarea'
         ),
         array(
             'name' => 'Portfolio Description',
-            'desc' => 'upload your portfolio images',
+            'desc' => 'Add a description for the portfolio',
             'id' => $prefix . 'portfolio_desc',
             'type' => 'textarea'
         ),

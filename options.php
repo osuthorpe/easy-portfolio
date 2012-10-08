@@ -328,14 +328,6 @@ function optionsframework_options() {
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Show Thumbnails', 'options_framework_theme'),
-		'desc' => __('If yes then thumbnails will be visible', 'options_framework_theme'),
-		'id' => 'bk_standard_thumbnails',
-		'std' => 'false',
-		'type' => 'radio',
-		'options' => $boolean_array);
-
-	$options[] = array(
 		'name' => __('Fullscreen Crop Images', 'options_framework_theme'),
 		'desc' => __('If yes then all images are cropped to fill the entire screen in fullscreen mode', 'options_framework_theme'),
 		'id' => 'bk_fullscreen_crop',

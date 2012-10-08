@@ -30,16 +30,19 @@
 
 					// show image
 					echo "<img src='{$src}' data-title='{$title}' data-description='{$caption}'>";
-			} ?>
+				}
+
+				echo apply_filters('the_content', get_post_meta($post->ID, 'bk_video', true));
+			?>
 		</div>
+
 		<script>
-			Galleria.loadTheme('<?php echo get_template_directory_uri()."/js/themes/classic/galleria.classic.js" ?>');
+			Galleria.loadTheme('<?php echo get_template_directory_uri()."/js/themes/simple/galleria.simple.js" ?>');
 			Galleria.run('#galleria', {
 				transition: <?php echo "'".of_get_option('bk_standard_transition')."'"; ?>,
 		        touchTransition: 'slide',
 		        fullscreenTransition: <?php echo "'".of_get_option('bk_fullscreen_transition')."'"; ?>,
 		        fullscreenCrop: <?php echo of_get_option('bk_fullscreen_crop'); ?>,
-		        thumbnails: <?php echo of_get_option('bk_standard_thumbnails'); ?>,
 		        responsive: false,
 		        autoplay: <?php echo of_get_option('bk_standard_play'); ?>,
 		        imageCrop: <?php echo of_get_option('bk_standard_crop'); ?>,

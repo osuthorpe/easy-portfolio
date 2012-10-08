@@ -410,6 +410,8 @@ img
 .aligncenter
 {
   margin: auto;
+  display: block;
+  clear: both;
 }
 iframe,
 embed
@@ -496,19 +498,27 @@ embed
 }
 
 #portfolio-content {
-  float: right;
+  float: left;
+  width: 630px;
   display: block;
   overflow: hidden;
 }
 
 #portfolio-content .portfolio-link {
   float: left;
+  display: block;
+  overflow: hidden;
+  width: 200px;
+  margin: 0 5px 10px 5px;
+}
+
+#portfolio-content .portfolio-link img {
+  width: 100%;
 }
 
 #portfolio-content .portfolio-link h4 {
-  font-size: 14px;
+  font-size: 1em;
   line-height: 1.5em;
-  margin-left: 10px;
 }
 
 #portfolio-content .portfolio-link h4 a {
@@ -649,9 +659,8 @@ embed
 .mosaic-block {
   position:relative;
   overflow:hidden;
-  width:200px;
+  width:100%;
   height:200px;
-  margin-left: 10px;
 }
 
 .mosaic-backdrop {
@@ -1316,20 +1325,23 @@ input#searchsubmit:hover {
     margin: auto;
   }
 
-  #blog-content {
+  #blog-content,
+  #portfolio-content {
     width: 510px;
     margin-bottom: 20px;
   }
 
-  #portfolio-content .portfolio-link h4 {
-    margin-left: 24px;
+  #portfolio-content .portfolio-link {
+    margin: 0 10px 15px 0;
+    width: 160px;
   }
 
-  .mosaic-block {
-    margin: 10px 24px;
+  #portfolio-content .portfolio-link .mosaic-block {
+    width: 160px;
+    height: 160px;
   }
 
-  img {
+  .single-image img {
     width: 100%;
   }
 }
@@ -1418,6 +1430,16 @@ input#searchsubmit:hover {
       width: 480px;
     }
 
+    #portfolio-content .portfolio-link {
+      width: 220px;
+      margin: 10px 20px 15px 0;
+    }
+
+    #portfolio-content .portfolio-link .mosaic-block {
+      width: 220px;
+      height: 100px;
+    }
+
     iframe,
     embed {
       height: 150px;
@@ -1444,10 +1466,6 @@ input#searchsubmit:hover {
       margin-right: 5px;
     }
 
-    #portfolio-content .portfolio-link h4 {
-      margin-left: 20px;
-    }
-
     .contact-address,
     .contact-form {
       width: 100%;
@@ -1456,7 +1474,6 @@ input#searchsubmit:hover {
     .mosaic-block {
       width: 220px;
       height: 100px;
-      margin:10px 0 0 20px;
     }
 
     .mosaic-block img {
@@ -1506,8 +1523,9 @@ input#searchsubmit:hover {
       width: 100%;
     }
 
-    #portfolio-content .portfolio-link h4 {
-      margin-left: 0;
+    #portfolio-content .portfolio-link .mosaic-block {
+      width: 100%;
+      height: 125px;
     }
 
     .widget_search #s {
