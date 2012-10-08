@@ -1,6 +1,6 @@
 <?php
 /*------------------------------
-       Include jQuery Scripts
+       Include Scripts
 -------------------------------*/
 
 function bk_load_all_scripts() {

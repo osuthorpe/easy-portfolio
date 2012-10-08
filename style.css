@@ -460,26 +460,41 @@ embed
   color: #0099cc;
 }
 
-#pull {
-  display: none;
+input#searchsubmit,
+#pull,
+#social-pull,
+#social .social-icon {
+  background: url('images/easy-icons.png') no-repeat 0 0;
   width: 32px;
   height: 32px;
-  top: 10px;
-  right: 10px;
-  background: url('images/thumbnails-2.png') no-repeat center center;
-  overflow: hidden;
-  z-index: 9;
-  text-indent: -9999px;
-  cursor:pointer;
-  float: right;
-  opacity: .3;
-  filter: alpha(opacity=30);
-  background-repeat: no-repeat;
   -webkit-transition: all 400ms ease;
   -moz-transition: all 400ms ease;
   -ms-transition: all 400ms ease;
   -o-transition: all 400ms ease;
   transition: all 400ms ease;
+  cursor: pointer;
+  text-indent: -9999px;
+}
+
+#social .social-icon {
+  margin: 5px;
+  background-color: #222222;
+  float: left;
+  border: none;
+  -webkit-border-radius: 64px;
+  border-radius: 64px;
+}
+
+#pull {
+  display: none;
+  top: 10px;
+  right: 10px;
+  background-position: -352px 0 !important;
+  overflow: hidden;
+  z-index: 9;
+  float: right;
+  opacity: .3;
+  filter: alpha(opacity=30);
 }
 
 #pull:hover {
@@ -487,7 +502,9 @@ embed
   filter: alpha(opacity=100);
 }
 
-.opened { display: block; }
+.opened {
+  display: block;
+}
 
 #main-content {
   width: 830px;
@@ -560,24 +577,15 @@ embed
 
 #social-pull {
   display: none;
-  width: 32px;
-  height: 32px;
   top: 10px;
   right: 42px;
-  background: url('images/heart.png') no-repeat center center;
+  background-position: -384px 0 !important;
+  background-color: none;
   overflow: hidden;
   z-index: 9;
-  text-indent: -9999px;
-  cursor:pointer;
   float: right;
   opacity: .3;
   filter: alpha(opacity=30);
-  background-repeat: no-repeat;
-  -webkit-transition: all 400ms ease;
-  -moz-transition: all 400ms ease;
-  -ms-transition: all 400ms ease;
-  -o-transition: all 400ms ease;
-  transition: all 400ms ease;
 }
 
 #social-pull:hover {
@@ -591,24 +599,6 @@ embed
   overflow: hidden;
   float: right;
   margin-top: 10px;
-}
-
-#social .social-icon {
-  margin: 5px;
-  float: left;
-  border: none;
-  -webkit-border-radius: 64px;
-  border-radius: 64px;
-  width: 32px;
-  height: 32px;
-  text-indent: -9999px;
-  background: url('images/social-media-icons.png') no-repeat #222222 0 0;
-  cursor: pointer;
-  -webkit-transition: all 400ms ease;
-  -moz-transition: all 400ms ease;
-  -ms-transition: all 400ms ease;
-  -o-transition: all 400ms ease;
-  transition: all 400ms ease;
 }
 
 #social .social-icon:hover {
@@ -650,6 +640,7 @@ embed
 .youtube {
   background-position: -288px 0 !important;
 }
+
 /*-----------------------------------------------
 3.    Mosic Plugin
 -----------------------------------------------*/
@@ -699,15 +690,6 @@ embed
 
 .mosaic-overlay:hover {
   color: #fff;
-}
-
-/*** Custom Animation Styles (You can remove/add any styles below) ***/
-.circle .mosaic-overlay {
-  background:url(images/hover-magnify.png) no-repeat center center;
-  opacity:0;
-  -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=00);
-  filter:alpha(opacity=00);
-  display:none
 }
 
 .fade .mosaic-overlay {
@@ -1128,14 +1110,8 @@ input#searchsubmit {
   border-radius: 60px;
   width: 30px;
   height: 30px;
-  text-indent: -9999px;
-  background: url('images/spyglass.png') no-repeat #222222;
-  cursor: pointer;
-  -webkit-transition: all 400ms ease;
-  -moz-transition: all 400ms ease;
-  -ms-transition: all 400ms ease;
-  -o-transition: all 400ms ease;
-  transition: all 400ms ease;
+  background-color: #222222;
+  background-position: -322px -1px !important;
 }
 
 input#searchsubmit:hover {
@@ -1255,21 +1231,17 @@ input#searchsubmit:hover {
     only screen and (-o-min-device-pixel-ratio: 3/2),
     only screen and (min--moz-device-pixel-ratio: 1.5),
     only screen and (min-device-pixel-ratio: 1.5) {
-      input#searchsubmit {
-        background: url('images/spyglass@2x.png') no-repeat #222222 -2px 0;
-        background-size: 32px 32px;
-      }
-      #pull {
-        background: url('images/thumbnails-2@2x.png') no-repeat 50% 50% #fff;
-        background-size: 32px 32px;
-      }
-      #social-pull {
-        background: url('images/heart@2x.png') no-repeat 50% 50% #fff;
-        background-size: 32px 32px;
-      }
+      input#searchsubmit,
+      #pull,
+      #social-pull,
       #social .social-icon {
-        background: url('images/social-media-icons@2x.png') no-repeat #222222;
-        background-size: 320px 32px;
+        background: url('images/easy-icons@2x.png') no-repeat;
+        background-size: 416px 32px;
+      }
+
+      input#searchsubmit,
+      #social .social-icon {
+        background-color: #222222;
       }
 }
 
