@@ -347,6 +347,14 @@ function bk_user_styles() {
         blockquote {
             border-left-color: <?php echo of_get_option('bk_accent_color'); ?>;
         }
+        input#searchsubmit,
+        #social .social-icon {
+            background-color: <?php echo of_get_option('bk_icon_color'); ?>;
+        }
+        input#searchsubmit:hover,
+        #social .social-icon:hover {
+            background-color: <?php echo of_get_option('bk_icon_hover_color'); ?>;
+        }
     </style>
 <?php }
 add_action('wp_head', 'bk_user_styles');
@@ -378,8 +386,8 @@ function bk_register_required_plugins() {
 
         // This is an example of how to include a plugin from the WordPress Plugin Repository
         array(
-            'name'      => 'W3 Total Cache',
-            'slug'      => 'w3-total-cache',
+            'name'      => 'Wordpress GZIP Compression',
+            'slug'      => 'wordpress-gzip-compression',
             'required'  => false,
         ),
         array(

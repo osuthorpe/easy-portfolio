@@ -1231,11 +1231,6 @@ input#searchsubmit:hover {
         background: url('images/easy-icons@2x.png') no-repeat;
         background-size: 416px 32px;
       }
-
-      input#searchsubmit,
-      #social .social-icon {
-        background-color: #222222;
-      }
 }
 
 

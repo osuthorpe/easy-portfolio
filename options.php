@@ -226,7 +226,7 @@ function optionsframework_options() {
 		'id' => 'bk_secondary_color',
 		'std' => '#777777',
 		'type' => 'color' );
-		
+
 	$options[] = array(
 		'name' => __('Accent Color', 'options_framework_theme'),
 		'desc' => __('Color for the accents in the design.', 'options_framework_theme'),
@@ -247,18 +247,18 @@ function optionsframework_options() {
 		'id' => 'bk_link_hover_color',
 		'std' => '#444444',
 		'type' => 'color' );
-		
+
 	$options[] = array(
 		'name' => __('Icons Color', 'options_framework_theme'),
 		'desc' => __('Color for the social media icon backgrounds.', 'options_framework_theme'),
-		'id' => 'bk_social_color',
+		'id' => 'bk_icon_color',
 		'std' => '#222222',
 		'type' => 'color' );
 
 	$options[] = array(
 		'name' => __('Icons Hover Color', 'options_framework_theme'),
 		'desc' => __('Color for hovering over the social media icons.', 'options_framework_theme'),
-		'id' => 'bk_social_hover_color',
+		'id' => 'bk_icon_hover_color',
 		'std' => '#444444',
 		'type' => 'color' );
 
