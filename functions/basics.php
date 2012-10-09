@@ -263,7 +263,10 @@ add_filter('the_generator', 'bk_complete_version_removal');
 
 function bk_user_styles() {
     $background = of_get_option('bk_main_background');
+    $galleria_background = of_get_option('bk_portfolio_background');
     $header = of_get_option('bk_header_type');
+    $title = of_get_option('bk_title_type');
+    $body = of_get_option('bk_body_type');
     $nav = of_get_option('bk_menu_type');
     ?>
     <style type="text/css">
@@ -272,6 +275,13 @@ function bk_user_styles() {
                 echo "background-image: url(" . $background['image'] . ");";
             } else {
                 echo "background-color:" . $background['color'] . ";";
+            } ?>
+        }
+        .galleria-container {
+            <?php if($background['image']) {
+                echo "background-image: url(" . $galleria_background['image'] . ");";
+            } else {
+                echo "background-color:" . $galleria_background['color'] . ";";
             } ?>
         }
         #header a {
@@ -286,11 +296,56 @@ function bk_user_styles() {
             font-style: <?php echo $nav['style']; ?>;
             color: <?php echo $nav['color']; ?>;
         }
-        a {
+        h1, h2, h3, h4, h5, h6 {
+	        font-family: <?php echo "'".$header['face']."'"; ?>;
+            color: <?php echo $title['color']; ?>;
+        }
+        #blog-content h2 {
+	        font-size: <?php echo $title['size']; ?>;
+            font-family: <?php echo "'".$title['face']."'"; ?>;
+            font-style: <?php echo $title['style']; ?>;
+            color: <?php echo $title['color']; ?>;
+        }
+        body {
+	        font-size: <?php echo $body['size']; ?>;
+            font-family: <?php echo "'".$body['face']."'"; ?>;
+            font-style: <?php echo $body['style']; ?>;
+            color: <?php echo $body['color']; ?>;
+        }
+        a,
+        #portfolio-content .portfolio-link h4 a:hover,
+        #navigation a:hover {
             color: <?php echo of_get_option('bk_link_color'); ?>;
         }
-        a:hover {
+        a:hover,
+        #portfolio-content .portfolio-link h4 a {
             color: <?php echo of_get_option('bk_link_hover_color'); ?>;
+        }
+        .subheader,
+        p.lead,
+        blockquote,
+        blockquote p,
+        blockquote cite,
+        blockquote cite a,
+        blockquote cite a:visited,
+        blockquote cite a:visited,
+        hr,
+        .wp-caption {
+             color: <?php echo of_get_option('bk_secondary_color'); ?>;
+        }
+        .gallery-caption,
+        .sticky,
+        {
+	        background: <?php echo of_get_option('bk_accent_color'); ?>;
+        }
+        #header,
+        #blog-content .single-content,
+        .contact-address h5,
+        .widgettitle {
+			border-bottom-color: <?php echo of_get_option('bk_accent_color'); ?>;
+		}
+        blockquote {
+            border-left-color: <?php echo of_get_option('bk_accent_color'); ?>;
         }
     </style>
 <?php }

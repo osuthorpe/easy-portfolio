@@ -79,7 +79,7 @@ function optionsframework_options() {
 		'color' => '#222222' );
 
 	$title_typography_defaults = array(
-		'size' => '15px',
+		'size' => '24px',
 		'face' => 'georgia',
 		'style' => 'bold',
 		'color' => '#222222' );
@@ -221,19 +221,12 @@ function optionsframework_options() {
 		'type' => 'background');
 
 	$options[] = array(
-		'name' => __('Social Media Icons Color', 'options_framework_theme'),
-		'desc' => __('Color for the social media icon backgrounds.', 'options_framework_theme'),
-		'id' => 'bk_social_color',
-		'std' => '#222222',
+		'name' => __('Secondary Color', 'options_framework_theme'),
+		'desc' => __('Color for the accents in the design.', 'options_framework_theme'),
+		'id' => 'bk_secondary_color',
+		'std' => '#777777',
 		'type' => 'color' );
-
-	$options[] = array(
-		'name' => __('Social Media Icons Hover Color', 'options_framework_theme'),
-		'desc' => __('Color for hovering over the social media icons.', 'options_framework_theme'),
-		'id' => 'bk_social_hover_color',
-		'std' => '#444444',
-		'type' => 'color' );
-
+		
 	$options[] = array(
 		'name' => __('Accent Color', 'options_framework_theme'),
 		'desc' => __('Color for the accents in the design.', 'options_framework_theme'),
@@ -252,6 +245,20 @@ function optionsframework_options() {
 		'name' => __('Link Hover Color', 'options_framework_theme'),
 		'desc' => __('Default color for any time link is hovered over.', 'options_framework_theme'),
 		'id' => 'bk_link_hover_color',
+		'std' => '#444444',
+		'type' => 'color' );
+		
+	$options[] = array(
+		'name' => __('Icons Color', 'options_framework_theme'),
+		'desc' => __('Color for the social media icon backgrounds.', 'options_framework_theme'),
+		'id' => 'bk_social_color',
+		'std' => '#222222',
+		'type' => 'color' );
+
+	$options[] = array(
+		'name' => __('Icons Hover Color', 'options_framework_theme'),
+		'desc' => __('Color for hovering over the social media icons.', 'options_framework_theme'),
+		'id' => 'bk_social_hover_color',
 		'std' => '#444444',
 		'type' => 'color' );
 

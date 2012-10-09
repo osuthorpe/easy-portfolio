@@ -1,7 +1,7 @@
 /*
 Theme Name: Easy Portfolio
 Theme URI: http://easy.alexthorpe.com
-Description: An easy portfolio theme for creatives.
+Description: An easy portfolio for creatives.
 Author: Alex Thorpe
 Author URI: http://www.alexthorpe.org/
 Version: 1.0
@@ -28,11 +28,6 @@ License URI:
 /*-----------------------------------------------
 0.    Reset
 -----------------------------------------------*/
-
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -86,10 +81,10 @@ table {
 /*-----------------------------------------------
 1.    Default Wordpress Styles
 -----------------------------------------------*/
+
 h1, h2, h3, h4, h5, h6
 {
   color: #181818;
-  font-family: "Georgia", "Times New Roman", serif;
   font-weight: normal;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
@@ -155,7 +150,6 @@ em
 }
 strong
 {
-  color: #333;
   font-weight: bold;
 }
 small
@@ -195,7 +189,7 @@ blockquote
 }
 blockquote cite
 {
-  color: #555;
+  color: #777;
   display: block;
   font-size: 12px;
 }
@@ -205,11 +199,11 @@ blockquote cite:before
 }
 blockquote cite a, blockquote cite a:visited, blockquote cite a:visited
 {
-  color: #555;
+  color: #777;
 }
 hr
 {
-  border: solid #ddd;
+  border: solid #777;
   border-width: 1px 0 0;
   clear: both;
   height: 0;
@@ -345,7 +339,7 @@ legend span
 }
 .wp-caption
 {
-  color: #666;
+  color: #777;
   position: relative;
 }
 .wp-caption img
@@ -447,7 +441,6 @@ embed
 #navigation li a {
   position: relative;
   font-family: 'Droid Serif', Georgia, serif;
-  line-height: 1.25em;
   font-weight: normal;
   font-style: italic;
   font-size: 16px;
