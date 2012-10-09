@@ -476,6 +476,7 @@ input#searchsubmit,
   border: none;
   -webkit-border-radius: 64px;
   border-radius: 64px;
+  behavior: url(/?pie=true);
 }
 
 #pull {
@@ -1101,6 +1102,7 @@ input#searchsubmit {
   border: none;
   -webkit-border-radius: 60px;
   border-radius: 60px;
+  behavior: url(/?pie=true);
   width: 30px;
   height: 30px;
   background-color: #222222;

@@ -256,6 +256,27 @@ function bk_complete_version_removal() {
 }
 add_filter('the_generator', 'bk_complete_version_removal');
 
+/*------------------------------------------
+  Redirect CSS3PIE call
+------------------------------------------*/
+
+function bk_css_pie ( $vars ) {
+    $vars[] = 'pie';
+    return $vars;
+}
+
+add_filter( 'query_vars' , 'bk_css_pie'); //WordPress will now interpret the PIE variable in the url
+
+function bk_load_pie() {
+    if ( get_query_var( 'pie' ) == "true" ) {
+        header( 'Content-type: text/x-component' );
+        wp_redirect( get_bloginfo('template_url').'/PIE.htc' ); // adjust the url to where PIE.htc is located, in this example we are fetching in the themes includes directory
+        // Stop WordPress entirely since we just want PIE.htc
+        exit;
+    }
+}
+
+add_action( 'template_redirect', 'bk_load_pie' );
 
 /*------------------------------------------
   User Styles for Theme
