@@ -14,7 +14,9 @@
 		<title><?php echo bloginfo( 'name' ); ?> <?php echo wp_title(); ?> </title>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen" />
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/add2home/add2home.css" type="text/css" media="screen" />
+		<?php if (is_home()) { ?>
+			<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/add2home/add2home.css" type="text/css" media="screen" />
+		<?php } ?>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 		<!--[if lt IE 9]>

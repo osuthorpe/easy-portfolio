@@ -14,6 +14,7 @@ function bk_load_all_scripts() {
         wp_enqueue_script('jquery');
         wp_enqueue_script('galleria');
         wp_enqueue_script('add2home');
+        wp_enqueue_script('mosaic');
     }
 }
 
@@ -91,8 +92,6 @@ function bk_jquery_scripts() { ?>
 
 
     <?php } if (is_page_template('portfolios.php') && !is_admin() ) { ?>
-
-        <?php wp_enqueue_script('mosaic'); ?>
 
         jQuery(function($){
             $('.fade').mosaic();
