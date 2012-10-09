@@ -412,6 +412,11 @@ function bk_register_required_plugins() {
             'required'  => false,
         ),
         array(
+            'name'      => 'W3 Total Cache',
+            'slug'      => 'w3-total-cache',
+            'required'  => false,
+        ),
+        array(
             'name'      => 'Wordpress Firewall 2',
             'slug'      => 'wordpress-firewall-2',
             'required'  => false,
