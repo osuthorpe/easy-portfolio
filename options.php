@@ -91,7 +91,7 @@ function optionsframework_options() {
 		'color' => '#222222' );
 
 	$body_typography_defaults = array(
-		'size' => '15px',
+		'size' => '14px',
 		'face' => 'georgia',
 		'style' => 'normal',
 		'color' => '#222222' );

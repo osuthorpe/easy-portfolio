@@ -351,7 +351,9 @@ function bk_user_styles() {
         blockquote cite a:visited,
         blockquote cite a:visited,
         hr,
-        .wp-caption {
+        .wp-caption,
+        #blog-content .single-content .meta,
+        .comment-meta a:link,.comment-meta a:visited  {
              color: <?php echo of_get_option('bk_secondary_color'); ?>;
         }
         .gallery-caption,
