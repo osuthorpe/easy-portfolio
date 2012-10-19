@@ -1,29 +1,32 @@
 /*
 Theme Name: Easy Portfolio
 Theme URI: http://easy.alexthorpe.com
-Description: An easy portfolio for creatives.
+Description: An easy portfolio for creatives to show off there work online.
 Author: Alex Thorpe
 Author URI: http://www.alexthorpe.org/
 Version: 1.0
-Tags: threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style
-License:
-License URI:
+Tags: threaded-comments, sticky-post, translation-ready, custom-background, custom-colors, custom-header, custom-menu, theme-options
+License: GPL 3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 ------------------------------------------------
 0.    Reset
-1.    Structure
-2.    Default Wordpress Styles
-3.    Navigation Styles
-4.    Layout Styles
-5.    Portfolios
-6.    Gear Page
-7.    FAQ Page
-8.    Blog
-9.    Sidebar
-10.   Pricing Grid
-11.   Contact Page
+1.    Default Wordpress Styles
+2.    Main Style
+3.    portfolio.php
+4.    Mosic Plugin
+5.    Comments
+6.    blog.php
+7.    contact.php
+8.    Sidebar
+9.    Footer
+10.   Retina Display Settings
+11.   Tablet Portrait
+12.   Phone Landscape
+13.   Phone Portrait
 -----------------------------------------------*/
+
 
 /*-----------------------------------------------
 0.    Reset
@@ -508,38 +511,6 @@ input#searchsubmit,
   overflow: hidden;
 }
 
-#portfolio-content {
-  float: left;
-  width: 630px;
-  display: block;
-  overflow: hidden;
-}
-
-#portfolio-content .portfolio-link {
-  float: left;
-  display: block;
-  overflow: hidden;
-  width: 200px;
-  margin: 0 5px 10px 5px;
-}
-
-#portfolio-content .portfolio-link img {
-  width: 100%;
-}
-
-#portfolio-content .portfolio-link h4 {
-  font-size: 1em;
-  line-height: 1.5em;
-}
-
-#portfolio-content .portfolio-link h4 a {
-  color: #444444;
-}
-
-#portfolio-content .portfolio-link h4 a:hover {
-  color: #0099cc;
-}
-
 #galleria {
   width: 100%;
 }
@@ -636,7 +607,43 @@ input#searchsubmit,
 }
 
 /*-----------------------------------------------
-3.    Mosic Plugin
+3.    portfolio.php
+-----------------------------------------------*/
+
+#portfolio-content {
+  float: left;
+  width: 630px;
+  display: block;
+  overflow: hidden;
+}
+
+#portfolio-content .portfolio-link {
+  float: left;
+  display: block;
+  overflow: hidden;
+  width: 200px;
+  margin: 0 5px 10px 5px;
+}
+
+#portfolio-content .portfolio-link img {
+  width: 100%;
+}
+
+#portfolio-content .portfolio-link h4 {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+#portfolio-content .portfolio-link h4 a {
+  color: #444444;
+}
+
+#portfolio-content .portfolio-link h4 a:hover {
+  color: #0099cc;
+}
+
+/*-----------------------------------------------
+4.    Mosic Plugin
 -----------------------------------------------*/
 
 /*General Mosaic Styles*/
@@ -701,7 +708,7 @@ input#searchsubmit,
 
 
 /*-----------------------------------------------
-4.    Comments
+5.    Comments
 -----------------------------------------------*/
 
 #comments {
@@ -935,7 +942,7 @@ h3#reply-title {
 }
 
 /*-----------------------------------------------
-5.    Blog
+5.    blog.php
 -----------------------------------------------*/
 
 #blog-content {
@@ -999,7 +1006,7 @@ h3#reply-title {
 
 
 /*-----------------------------------------------
-6.    Contact Page
+7.    contact.php
 -----------------------------------------------*/
 
 .contact-address,
@@ -1027,7 +1034,7 @@ h3#reply-title {
 }
 
 /*-----------------------------------------------
-7.    Sidebar
+8.    Sidebar
 -----------------------------------------------*/
 
 #sidebar {
@@ -1207,7 +1214,7 @@ input#searchsubmit:hover {
 
 
 /*-----------------------------------------------
-8.    Footer
+9.    Footer
 -----------------------------------------------*/
 
 #footer {
@@ -1219,7 +1226,7 @@ input#searchsubmit:hover {
 }
 
 /*-----------------------------------------------
-9.    Retina Display Settings
+10.    Retina Display Settings
 -----------------------------------------------*/
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
@@ -1237,7 +1244,7 @@ input#searchsubmit:hover {
 
 
 /*-----------------------------------------------
-10.    Tablet Portrait
+11.    Tablet Portrait
 -----------------------------------------------*/
 
 @media only screen and (max-width: 958px) {
@@ -1309,7 +1316,7 @@ input#searchsubmit:hover {
 
 
 /*-----------------------------------------------
-11.    Phone Landscape
+12.    Phone Landscape
 -----------------------------------------------*/
 
 @media only screen and (max-width: 767px) {
@@ -1449,7 +1456,7 @@ input#searchsubmit:hover {
 
 
 /*-----------------------------------------------
-12.    Phone Portrait
+13.    Phone Portrait
 -----------------------------------------------*/
 @media only screen and (max-width: 479px) {
     #header,

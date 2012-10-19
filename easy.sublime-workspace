@@ -227,30 +227,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "style.css",
-			"settings":
-			{
-				"buffer_size": 22507,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "functions/basics.php",
-			"settings":
-			{
-				"buffer_size": 19841,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "options.php",
-			"settings":
-			{
-				"buffer_size": 14576,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -300,12 +276,14 @@
 	},
 	"file_history":
 	[
+		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/style.css",
+		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/functions/basics.php",
+		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/options.php",
+		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/functions.php",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/index.php",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/header.php",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/functions/post_types.php",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/functions/load-javascript.php",
-		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/functions/basics.php",
-		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/options.php",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/js/themes/simple/galleria.simple.min.css",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/js/themes/simple/galleria.simple.min.js",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/js/themes/simple/galleria.simple.js",
@@ -318,7 +296,6 @@
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/comments.php",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/contact.php",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/footer.php",
-		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/functions.php",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/menu.php",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/page.php",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/portfolios.php",
@@ -329,7 +306,6 @@
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/sidebar.php",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/single-portfolio.php",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/single.php",
-		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/style.css",
 		"/Users/athorpe-macbook/Box Documents/Open Source/easy-portfolio/easy-portfolio.sublime-workspace",
 		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/style.css",
 		"/Users/athorpe-macbook/Documents/Github/easy-portfolio/functions/options/theme-options.php",
@@ -460,101 +436,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "style.css",
-					"settings":
-					{
-						"buffer_size": 22507,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								14044,
-								14008
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 14247.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "functions/basics.php",
-					"settings":
-					{
-						"buffer_size": 19841,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								12585,
-								12585
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5132.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "options.php",
-					"settings":
-					{
-						"buffer_size": 14576,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2823,
-								2823
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 946.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

@@ -79,7 +79,7 @@ function optionsframework_options() {
 		'color' => '#222222' );
 
 	$title_typography_defaults = array(
-		'size' => '24px',
+		'size' => '40px',
 		'face' => 'georgia',
 		'style' => 'bold',
 		'color' => '#222222' );
@@ -148,6 +148,12 @@ function optionsframework_options() {
 	//Default copyright notice
 	$copyright = '© ' . $site_title . ', All rights reserved';
 
+	//Favicon
+	$favicon = get_template_directory_uri().'/images/favicon.png';
+
+	//Web App Icon
+	$web_app_icon = get_template_directory_uri().'/images/web-app-icon.png';
+
 	$options = array();
 
 	/*
@@ -174,14 +180,14 @@ function optionsframework_options() {
 		'name' => __('Favicon', 'options_framework_theme'),
 		'desc' => __('Upload a favicon to display next to your url in the address bar *Required Dimentions* (Width: 32px, Height: 32px).', 'options_framework_theme'),
 		'id' => 'bk_favicon',
-		'std' => 'http://dev.alexthorpe.com/wp-content/uploads/2012/10/picture.png',
+		'std' => $favicon,
 		'type' => 'upload');
 
 	$options[] = array(
 		'name' => __('Mobile App Icon', 'options_framework_theme'),
 		'desc' => __('Upload an icon for mobile home screens *Required Dimentions* (Width: 144px, Height: 144px).', 'options_framework_theme'),
 		'id' => 'bk_mobile_icon',
-		'std' => 'http://dev.alexthorpe.com/wp-content/uploads/2012/10/web-app-icon.png',
+		'std' => $web_app_icon,
 		'type' => 'upload');
 
 	$options[] = array(

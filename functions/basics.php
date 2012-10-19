@@ -378,6 +378,7 @@ function bk_user_styles() {
         #social .social-icon:hover {
             background-color: <?php echo of_get_option('bk_icon_hover_color'); ?>;
         }
+        <?php echo of_get_option('bk_advanced_css'); ?>
     </style>
 <?php }
 add_action('wp_head', 'bk_user_styles');
