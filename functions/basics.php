@@ -270,7 +270,7 @@ add_filter( 'query_vars' , 'bk_css_pie'); //WordPress will now interpret the PIE
 function bk_load_pie() {
     if ( get_query_var( 'pie' ) == "true" ) {
         header( 'Content-type: text/x-component' );
-        wp_redirect( get_bloginfo('template_url').'/PIE.htc' ); // adjust the url to where PIE.htc is located, in this example we are fetching in the themes includes directory
+        wp_redirect( get_template_directory_uri().'/PIE.htc' ); // adjust the url to where PIE.htc is located, in this example we are fetching in the themes includes directory
         // Stop WordPress entirely since we just want PIE.htc
         exit;
     }

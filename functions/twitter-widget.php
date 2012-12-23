@@ -52,7 +52,8 @@ class BK_Twitter_Widget extends WP_Widget {
 		echo '<h2 class="widgettitle">'.$instance['title'].'</h3>';
 		echo '<div id="twitter_update_list">
 			<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"> </script>
-			<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/'.$user.'.json?callback=twitterCallback2&count='.$instance['num_tweets'].'"></script></div><br />';
+			<script src="https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name='.$user.'&count='.$instance['num_tweets'].'"></script></div><br />';
+			//<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/'.$user.'.json?callback=twitterCallback2&count='.$instance['num_tweets'].'"></script></div><br />';
 
 		echo $args['after_widget'];
 	}
