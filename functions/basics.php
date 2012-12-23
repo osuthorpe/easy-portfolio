@@ -28,14 +28,14 @@ add_action('admin_head', 'bk_admin_favicon');
 function bk_portfolio_icons() { ?>
     <style type="text/css" media="screen">
         #menu-posts-portfolio .wp-menu-image {
-            background: url(<?php bloginfo('template_url') ?>/images/photo-album.png) no-repeat 7px -17px !important;
+            background: url(<?php echo get_template_directory_uri(); ?>/images/photo-album.png) no-repeat 7px -17px !important;
             background-size: 16px 40px;
         }
         #menu-posts-portfolio:hover .wp-menu-image, #menu-posts-portfolio.wp-has-current-submenu .wp-menu-image {
             background-position:7px 7px !important;
         }
         #icon-edit.icon32-posts-portfolio {
-            background: url(<?php bloginfo('template_url') ?>/images/portfolio-32x32.png) no-repeat 7px 3px;
+            background: url(<?php echo get_template_directory_uri(); ?>/images/portfolio-32x32.png) no-repeat 7px 3px;
             background-size: 32px 32px;
         }
     </style>
