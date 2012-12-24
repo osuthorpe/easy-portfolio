@@ -107,7 +107,7 @@ add_filter( 'get_search_form', 'bk_search_form' );
 if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 104, 104, true ); // Main Thumbnail
-    add_image_size( 'thumbnail', 75, 75, true ); //Gallery Thumbnail
+    add_image_size( 'thumbnail', 150, 150, true ); //Gallery Thumbnail
     add_image_size( 'portfolio-thumb', 200, 200, true); //Portfolio Menu Thumbnail
     add_image_size('blog', 620, 9999, false); //Blog page image
     add_image_size('portfolil-thumb-narrow', 460, 100, true);
@@ -409,11 +409,6 @@ function bk_register_required_plugins() {
     $plugins = array(
 
         // This is an example of how to include a plugin from the WordPress Plugin Repository
-        array(
-            'name'      => 'Wordpress GZIP Compression',
-            'slug'      => 'wordpress-gzip-compression',
-            'required'  => false,
-        ),
         array(
             'name'      => 'W3 Total Cache',
             'slug'      => 'w3-total-cache',

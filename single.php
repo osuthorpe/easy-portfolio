@@ -17,15 +17,21 @@
 	                written on <?php the_time('F jS, Y') ?> | <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
 	            </div>
 
-	            <div class="post-tags page-tags">
-        			<?php the_tags('',', ',''); ?>
-        		</div>
-
 	            <div class="content">
 	                <?php the_content(); ?>
 	                <?php wp_link_pages(); ?>
 	            </div>
-
+	            
+	            <div class="post-cats page-cats">
+        			<p>Categories: <?php the_category(', '); ?></p>
+        		</div>
+        		
+        		<?php if(the_tags()) { ?>
+        			<div class="post-tags page-tags">
+        				<p>Tags: <?php the_tags('',', ',''); ?></p>
+        			</div>
+        		<?php } ?>
+        		
 		        <div id="nav-below" class="navigation">
 					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'framework' ) . '</span> %title' ); ?></div>
 					<div class="nav-next right"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'framework' ) . '</span>' ); ?></div>

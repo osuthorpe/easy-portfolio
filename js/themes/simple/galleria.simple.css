@@ -179,6 +179,10 @@
     background-position: -32px 0 !important;
 }
 
+.galleria-fullscreen.open {
+	background-position: 0 !important;
+}
+
 .galleria-play {
     background-position: -96px 0 !important;
     left: 64px;

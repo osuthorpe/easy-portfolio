@@ -661,7 +661,6 @@ input#searchsubmit,
   top:0;
   height:100%;
   width:100%;
-  background:#;
 }
 
 .mosaic-overlay {
@@ -677,7 +676,7 @@ input#searchsubmit,
 .mosaic-overlay h4 {
   color:#fff;
   font-size:18px;
-  padding:10px 10px 0
+  padding:10px 10px 0;
 }
 
 .mosaic-overlay .details {
@@ -697,13 +696,13 @@ input#searchsubmit,
   opacity:0;
   -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=00);
   filter:alpha(opacity=00);
-  background:url(images/bg-black.png)
+  background:url(images/bg-black.png);
 }
 
 .bar .mosaic-overlay {
   bottom:-200px;
   height:200px;
-  background:#2b2b2b
+  background:#2b2b2b;
 }
 
 
@@ -712,27 +711,27 @@ input#searchsubmit,
 -----------------------------------------------*/
 
 #comments {
-  clear:both
+  clear:both;
 }
 
 #comments .navigation {
-  padding:0 0 18px
+  padding:0 0 18px;
 }
 
 h3#comments-title,h3#reply-title {
   color:#000;
   font-size:20px;
   font-weight:700;
-  margin-bottom:0
+  margin-bottom:0;
 }
 
 h3#comments-title {
-  padding:24px 0
+  padding:24px 0;
 }
 
 .commentlist {
   list-style:none;
-  margin:0
+  margin:0;
 }
 
 .commentlist li.comment {
@@ -740,52 +739,49 @@ h3#comments-title {
   line-height:24px;
   margin:0 0 24px;
   padding:0 0 0 56px;
-  position:relative
+  position:relative;
 }
 
 .commentlist li:last-child {
   border-bottom:none;
-  margin-bottom:0
+  margin-bottom:0;
 }
 
 #comments .comment-body ul,#comments .comment-body ol {
-  margin-bottom:18px
+  margin-bottom:18px;
 }
 
 #comments .comment-body p:last-child {
-  margin-bottom:6px
+  margin-bottom:6px;
 }
 
 #comments .comment-body blockquote p:last-child {
-  margin-bottom:24px
+  margin-bottom:24px;
 }
 
 .commentlist ol {
-  list-style:decimal
+  list-style:decimal;
 }
 
 .commentlist .avatar {
   position:absolute;
   top:4px;
-  left:0
-}
-
-.comment-author {
+  left:0;
 }
 
 .comment-author cite {
   color:#000;
   font-style:normal;
-  font-weight:700
+  font-weight:700;
 }
 
 .comment-author .says {
-  font-style:italic
+  font-style:italic;
 }
 
 .comment-meta {
   font-size:12px;
-  margin:0 0 18px
+  margin:0 0 18px;
 }
 
 .comment-meta a:link,.comment-meta a:visited {
@@ -863,7 +859,6 @@ input[type=submit] {
 }
 
 #respond {
-  border-top:1px solid #e7e7e7;
   margin:24px 0;
   overflow:hidden;
   position:relative
@@ -962,10 +957,12 @@ h3#reply-title {
   display: block;
   overflow: hidden;
   float: left;
+  width: 45%
 }
 
 #blog-content .nav-next {
   float: right;
+  width: 45%
 }
 
 
@@ -979,10 +976,6 @@ h3#reply-title {
 #blog-content .single-content .meta {
   color: #a8a8a8;
   margin-bottom: 5px;
-}
-
-.single #blog-content .single-content {
-  border-bottom: none;
 }
 
 #blog-content .single-content .post-tags p {
@@ -1354,7 +1347,6 @@ input#searchsubmit:hover {
 
     #header h1,
     #header h1 a {
-      padding-top: 2px;
       font-size: 20px;
       line-height: 1.4em;
     }
@@ -1468,19 +1460,8 @@ input#searchsubmit:hover {
       width: 300px;
     }
 
-    #header h1,
-    #header h1 a {
-      font-size: 20px;
-      line-height: 1em;
-    }
-
     #header .site-title {
       width: 75%;
-    }
-
-    #pull,
-    #social-pull {
-      margin-top: 5px;
     }
 
     #social .social-icon {

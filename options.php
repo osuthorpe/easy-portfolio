@@ -79,7 +79,7 @@ function optionsframework_options() {
 		'color' => '#222222' );
 
 	$title_typography_defaults = array(
-		'size' => '40px',
+		'size' => '30px',
 		'face' => 'georgia',
 		'style' => 'bold',
 		'color' => '#222222' );

@@ -73,10 +73,9 @@ if(isset($_POST['submitted'])) {
                         <div class="clear"><?php the_content(); ?></div>
 
                         <div class="contact-address">
-                        	<?php if (rwmb_meta( 'bk_address_contact' )) {
+                        	<?php if (rwmb_meta( 'bk_street_contact' )) {
                         		echo '<h5>mailing address</h5>';
-                        		echo '<p>'.of_get_option('bk_site_title').'</br>'
-                        	      	  .rwmb_meta( 'bk_street_contact' ).'</br>'
+                        		echo '<p>'.rwmb_meta( 'bk_street_contact' ).'</br>'
                         			  .rwmb_meta( 'bk_city_contact' ).'</br>'
                         			  .rwmb_meta( 'bk_country_contact' ).'</p>';
                         	}
