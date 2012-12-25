@@ -1353,11 +1353,15 @@ input#searchsubmit:hover {
 
     .closed { display: none !important }
 
+    #navigation ul {
+    	margin: 0 0 10px 0;
+	}
+
     #navigation ul li {
       float: none;
-      border-bottom: 1px solid #888;
-      border-top: 1px solid #fff;
-      background: #e7e7e7;
+      border-bottom: 1px solid #c0c0c0;
+      border-top: 1px solid #fafafa;
+      background: #e0e0e0;
     }
     #navigation ul li:last-child {
       border-bottom: none
