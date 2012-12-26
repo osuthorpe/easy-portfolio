@@ -227,13 +227,6 @@ function optionsframework_options() {
 		'type' => 'background');
 
 	$options[] = array(
-		'name' => __('Secondary Color', 'options_framework_theme'),
-		'desc' => __('Color for the accents in the design.', 'options_framework_theme'),
-		'id' => 'bk_secondary_color',
-		'std' => '#777777',
-		'type' => 'color' );
-
-	$options[] = array(
 		'name' => __('Accent Color', 'options_framework_theme'),
 		'desc' => __('Color for the accents in the design.', 'options_framework_theme'),
 		'id' => 'bk_accent_color',
@@ -252,6 +245,13 @@ function optionsframework_options() {
 		'desc' => __('Default color for any time link is hovered over.', 'options_framework_theme'),
 		'id' => 'bk_link_hover_color',
 		'std' => '#444444',
+		'type' => 'color' );
+		
+	$options[] = array(
+		'name' => __('Meta Color', 'options_framework_theme'),
+		'desc' => __('Color for the meta tags on the blog.', 'options_framework_theme'),
+		'id' => 'bk_secondary_color',
+		'std' => '#777777',
 		'type' => 'color' );
 
 	$options[] = array(
