@@ -1,10 +1,16 @@
 <?php
 
-//basic WP settings
+//WP settings
 if( file_exists(get_template_directory().'/functions/basics.php') )
 	include_once(get_template_directory().'/functions/basics.php');
+	
+//WP Custom Pointers
+/*
+if( file_exists(get_template_directory().'/functions/pointers.php') )
+	include_once(get_template_directory().'/functions/pointers.php');
+*/
 
-//Load Javascript for theme
+//Load Javascript for themes
 if( file_exists(get_template_directory().'/functions/load-javascript.php') )
 	include_once(get_template_directory().'/functions/load-javascript.php');
 

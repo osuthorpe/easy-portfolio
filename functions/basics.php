@@ -383,7 +383,6 @@ function bk_user_styles() {
 <?php }
 add_action('wp_head', 'bk_user_styles');
 
-
 /*------------------------------------------
   TGM Plugin Activation Scripts
 ------------------------------------------*/
