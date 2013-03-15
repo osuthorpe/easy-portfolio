@@ -233,6 +233,37 @@ function bk_remove_thumbnail_dimensions( $html ) {
         return $html;
 }
 
+/*-----------------------------------------------------------------------------------*/
+/*  Wordpress Custom Backgrounds & Headers
+/*-----------------------------------------------------------------------------------*/
+
+/*
+$defaults = array(
+	'default-color'          => '',
+	'default-image'          => '',
+	'wp-head-callback'       => '_custom_background_cb',
+	'admin-head-callback'    => '',
+	'admin-preview-callback' => ''
+);
+add_theme_support( 'custom-background', $defaults );
+
+$defaults = array(
+	'default-image'          => '',
+	'random-default'         => false,
+	'width'                  => 0,
+	'height'                 => 0,
+	'flex-height'            => false,
+	'flex-width'             => false,
+	'default-text-color'     => '',
+	'header-text'            => true,
+	'uploads'                => true,
+	'wp-head-callback'       => '',
+	'admin-head-callback'    => '',
+	'admin-preview-callback' => '',
+);
+add_theme_support( 'custom-header', $defaults );
+*/
+
 /*------------------------------------------
        Remove header junk
 ------------------------------------------*/
