@@ -449,7 +449,11 @@ function bk_register_required_plugins() {
             'slug'      => 'wordpress-firewall-2',
             'required'  => false,
         ),
-
+        array(
+        	'name'		=> 'Theme Updater',
+        	'slug'		=> 'theme-updater',
+        	'required'	=> true,
+        )
     );
 
     /**
