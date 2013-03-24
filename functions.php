@@ -19,10 +19,10 @@ if( file_exists(get_template_directory().'/functions/post_types.php') )
 	include_once(get_template_directory().'/functions/post_types.php');
 
 // Load Options Theme Framework
-if ( !function_exists( 'optionsframework_init' ) ) {
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
-}
+//if ( !function_exists( 'optionsframework_init' ) ) {
+//	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+//	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
+//}
 
 // Re-define meta box path and URL
 define( 'RWMB_URL', trailingslashit( get_stylesheet_directory_uri() . '/functions/meta-box' ) );
