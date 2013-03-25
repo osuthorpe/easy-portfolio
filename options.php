@@ -7,10 +7,9 @@
 
 function optionsframework_option_name() {
 
-	// This gets the theme name from the stylesheet
-	$themename = get_option( 'stylesheet' );
-	$themename = preg_replace("/\W/", "_", strtolower($themename) );
-
+	// This gets the theme name from the stylesheet\
+	$themename = 'easyportfolio';
+	
 	$optionsframework_settings = get_option( 'optionsframework' );
 	$optionsframework_settings['id'] = $themename;
 	update_option( 'optionsframework', $optionsframework_settings );
