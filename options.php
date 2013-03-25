@@ -301,13 +301,6 @@ function optionsframework_options() {
 		'type' => 'heading' );
 
 	$options[] = array(
-		'name' =>  __('Portfolio Background', 'options_framework_theme'),
-		'desc' => __('Change the background for the Portfolio (if blank will be same as main background).', 'options_framework_theme'),
-		'id' => 'bk_portfolio_background',
-		'std' => $background_defaults,
-		'type' => 'background');
-
-	$options[] = array(
 		'name' => __('Crop Images', 'options_framework_theme'),
 		'desc' => __('If yes then all images are cropped to fit the portfolio frame', 'options_framework_theme'),
 		'id' => 'bk_standard_crop',

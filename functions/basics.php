@@ -357,13 +357,6 @@ function bk_user_styles() {
                 echo "background-color:" . $background['color'] . ";";
             } ?>
         }
-        .galleria-container {
-            <?php if($background['image']) {
-                echo "background-image: url(" . $galleria_background['image'] . ");";
-            } else {
-                echo "background-color:" . $galleria_background['color'] . ";";
-            } ?>
-        }
         #header a {
             font-size: <?php echo $header['size']; ?>;
             font-family: <?php echo "'".$header['face']."'"; ?>;
