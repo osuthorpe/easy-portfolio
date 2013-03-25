@@ -348,8 +348,48 @@ function bk_user_styles() {
     $title = of_get_option('bk_title_type');
     $body = of_get_option('bk_body_type');
     $nav = of_get_option('bk_menu_type');
+    $image_url = get_template_directory_uri() . '/js/themes/simple/';
     ?>
+    
     <style type="text/css">
+    	<?php if(of_get_option('bk_standard_icon_color') == 'white') { ?>
+	    	.galleria-fullscreen,
+			.galleria-play,
+			.galleria-previous,
+			.galleria-next,
+			.galleria-play.playing,
+			.galleria-fullscreen.open,
+			.galleria-info-link {
+			    background: url('<?php echo $image_url; ?>galleria-icons-white.png') no-repeat 0 0;
+			    opacity: .7;
+			    filter: alpha(opacity=70);
+			    -webkit-transition: all 400ms ease;
+			    -moz-transition: all 400ms ease;
+			    -ms-transition: all 400ms ease;
+			    -o-transition: all 400ms ease;
+			    transition: all 400ms ease;
+			}
+			
+			.galleria-counter {
+			    color: #fff;
+			}
+			
+			@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+			    only screen and (-o-min-device-pixel-ratio: 3/2),
+			    only screen and (min--moz-device-pixel-ratio: 1.5),
+			    only screen and (min-device-pixel-ratio: 1.5) {
+			        .galleria-fullscreen,
+			        .galleria-previous,
+			        .galleria-next,
+			        .galleria-play,
+			        .galleria-play.playing,
+			        .galleria-fullscreen.open,
+			        .galleria-info-link {
+			            background: url('<?php echo $image_url; ?>galleria-icons-white@2x.png') no-repeat 0 0;
+			            background-size: 224px 32px;
+			        }
+			}
+    	<?php } ?>
         body {
             <?php if($background['image']) {
                 echo "background-image: url(" . $background['image'] . ");";

@@ -56,6 +56,12 @@ function optionsframework_options() {
 		'slide' => __('slide', 'options_framework_theme'),
 		'fadeslide' => __('fadeslide', 'options_framework_theme')
 	);
+	
+	//Trasition Options
+	$icon_array = array(
+		'black' => __('black', 'options_framework_theme'),
+		'white' => __('white', 'options_framework_theme')
+	);
 
 	// Multicheck Defaults
 	$multicheck_defaults = array(
@@ -299,7 +305,16 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __('Portfolios', 'options_framework_theme'),
 		'type' => 'heading' );
-
+	
+	$options[] = array(
+		'name' => __('Icon Color', 'options_framework_theme'),
+		'desc' => __('Set the icon color', 'options_framework_theme'),
+		'id' => 'bk_standard_icon_color',
+		'std' => 'black',
+		'type' => 'select',
+		'class' => 'mini',
+		'options' => $icon_array);
+		
 	$options[] = array(
 		'name' => __('Crop Images', 'options_framework_theme'),
 		'desc' => __('If yes then all images are cropped to fit the portfolio frame', 'options_framework_theme'),
