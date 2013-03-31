@@ -3,7 +3,9 @@
  * GPL2
  */
 
-#galleria-loader{height:1px!important}
+#galleria-loader{
+	height:1px!important
+}
 
 .galleria-container {
     position: relative;
@@ -25,19 +27,17 @@
 .galleria-thumbnails-container {
     bottom: 32px;
     width: 100%;
-    background: #ffffff;
+    background: url('back.png');
+    padding: 5px;
     position: absolute;
     z-index: 5;
     display: none;
 }
-.galleria-carousel .galleria-thumbnails-list {
-    margin-left: 30px;
-    margin-right: 30px;
-}
 .galleria-thumbnails .galleria-image {
-    height: 40px;
-    width: 60px;
+    height: 50px;
+    width: 70px;
     border: 3px solid #fff;
+    margin: 5px;
     float: left;
     cursor: pointer;
 }
@@ -61,7 +61,7 @@
     background: url(simple-loader.gif) no-repeat 2px 2px;
 }
 .galleria-image-nav {
-    display: none;
+    display: block;
 }
 .touch .galleria-thumb-nav-left:active,
 .touch .galleria-thumb-nav-right:active {
@@ -147,6 +147,7 @@
 }
 
 .galleria-fullscreen,
+.galleria-showThumbs,
 .galleria-play,
 .galleria-previous,
 .galleria-next,
@@ -214,10 +215,19 @@
     cursor: pointer;
 }
 
+.galleria-showThumbs {
+	width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 32px;
+    bottom: 0px;
+    cursor: pointer;
+}
+
 .galleria-count {
     width: 60px;
     height: 32px;
-    right: 30px;
+    right: 60px;
     position: absolute;
 }
 

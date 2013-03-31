@@ -18,20 +18,21 @@ Galleria.addTheme({
         touchTransition: 'slide',
         fullscreenTransition: 'fade',
         fullscreenCrop: true,
-        thumbnails: false,
+        thumbnails: true,
         responsive: false,
         autoplay: false,
-        imageCrop: true
+        imageCrop: true,
+        carousel: false
     },
     init: function(options) {
 
-        Galleria.requires(1.28, 'This version of Classic theme requires Galleria 1.2.8 or later');
+        Galleria.requires(1.28, 'Simple theme requires Galleria 1.2.8 or later');
 
         // add some elements
-        this.addElement("controls","play","fullscreen","next","previous","count",'info-link','more'),
+        this.addElement("controls","play","fullscreen","next","previous","count","info-link","showThumbs","more"),
         this.append({
             container : ["controls","more"],
-            controls : ["fullscreen","previous","play","next","count","info-link"],
+            controls : ["fullscreen","previous","play","next","count","showThumbs","info-link"],
             count : 'counter'
         });
 
@@ -43,6 +44,8 @@ Galleria.addTheme({
             fullscreen = this.$('fullscreen'),
             play = this.$('play'),
             next = this.$('next'),
+            thumbnails = this.$('thumbnails-container'),
+            showThumbs = this.$('showThumbs'),
             previous = this.$('previous'),
             click = touch ? 'touchstart' : 'click';
 
@@ -56,6 +59,9 @@ Galleria.addTheme({
                 right: this.next,
                 up: this.toggleFullscreen,
             });
+        }
+        function thumbSlide() {
+	        thumbnails.slideToggle(400,'swing');
         }
 
         this.addIdleState( this.get('counter'), { opacity:1 });
@@ -75,6 +81,17 @@ Galleria.addTheme({
         this.bind("pause", function() {
             play.removeClass('playing');
         });
+        
+        this.bind("thumbnail", function (e) {
+            $(e.thumbTarget).click(function () {
+                thumbSlide();
+            })
+        });
+/*
+        this.bind("showThumbs", function() {
+	        thumbnails.show();
+        });
+*/
 
         fullscreen.click(function() {
             gallery.toggleFullscreen();
@@ -95,6 +112,10 @@ Galleria.addTheme({
         next.click(function() {
             gallery.next();
         });
+        
+        showThumbs.click(function() {
+        	thumbSlide();
+        })
 
         info.click(function() {
             $('.galleria-more').toggle();
@@ -109,10 +130,10 @@ Galleria.addTheme({
 
             if (! touch ) {
                 // fade thumbnails
-                $(e.thumbTarget).css('opacity', 0.6).parent().hover(function() {
+                $(e.thumbTarget).css('opacity', 0.8).parent().hover(function() {
                     $(this).not('.active').children().stop().fadeTo(100, 1);
                 }, function() {
-                    $(this).not('.active').children().stop().fadeTo(400, 0.6);
+                    $(this).not('.active').children().stop().fadeTo(400, 0.8);
                 });
 
                 if ( e.index === this.getIndex() ) {

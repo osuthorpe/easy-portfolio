@@ -352,6 +352,11 @@ function bk_user_styles() {
     ?>
     
     <style type="text/css">
+    	.galleria-container,
+    	.galleria-controls {
+	    	background-color: <?php echo $background['color'] ?>;
+    	}
+    		
     	<?php if(of_get_option('bk_standard_icon_color') == 'white') { ?>
 	    	.galleria-fullscreen,
 			.galleria-play,
