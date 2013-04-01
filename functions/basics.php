@@ -352,11 +352,6 @@ function bk_user_styles() {
     ?>
     
     <style type="text/css">
-    	.galleria-container,
-    	.galleria-controls {
-	    	background-color: <?php echo $background['color'] ?>;
-    	}
-    		
     	<?php if(of_get_option('bk_standard_icon_color') == 'white') { ?>
 	    	.galleria-fullscreen,
 			.galleria-play,
@@ -395,13 +390,24 @@ function bk_user_styles() {
 			        }
 			}
     	<?php } ?>
-        body {
-            <?php if($background['image']) {
-                echo "background-image: url(" . $background['image'] . ");";
-            } else {
-                echo "background-color:" . $background['color'] . ";";
-            } ?>
-        }
+    	
+        <?php if($background['image']) { ?>
+        	.galleria-container,
+	    	.galleria-controls {
+		    	background: transparent;
+		    }
+		    body,
+		    .image-background {
+			    background-image: url("<?php echo $background['image'] ?>");
+		    }
+        <?php } else { ?>
+        	body,
+        	.galleria-container,
+	    	.galleria-controls {
+		    	background-color: <?php echo $background['color'] ?>;
+	    	}
+    	<?php } ?>
+        	
         #header a {
             font-size: <?php echo $header['size']; ?>;
             font-family: <?php echo "'".$header['face']."'"; ?>;

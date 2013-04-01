@@ -166,6 +166,7 @@
 
 .galleria-fullscreen:hover,
 .galleria-play:hover,
+.galleria-showThumbs:hover,
 .galleria-previous:hover,
 .galleria-next:hover,
 .galleria-play.playing:hover,
@@ -200,6 +201,10 @@
 
 .galleria-play.playing {
     background-position: -128px 0 !important;
+}
+
+.galleria-showThumbs {
+	background-position: -224px 0 !important;
 }
 
 .galleria-info-link {
@@ -238,11 +243,12 @@
         .galleria-fullscreen,
         .galleria-previous,
         .galleria-next,
+        .galleria-showThumbs,
         .galleria-play,
         .galleria-play.playing,
         .galleria-fullscreen.open,
         .galleria-info-link {
             background: url('galleria-icons@2x.png') no-repeat 0 0;
-            background-size: 224px 32px;
+            background-size: 256px 32px;
         }
 }

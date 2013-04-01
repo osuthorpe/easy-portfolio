@@ -45,6 +45,7 @@ Galleria.addTheme({
             play = this.$('play'),
             next = this.$('next'),
             thumbnails = this.$('thumbnails-container'),
+            gallery_back = this.$('container'),
             showThumbs = this.$('showThumbs'),
             previous = this.$('previous'),
             click = touch ? 'touchstart' : 'click';
@@ -94,6 +95,7 @@ Galleria.addTheme({
 */
 
         fullscreen.click(function() {
+        	gallery_back.addClass('image-background');
             gallery.toggleFullscreen();
         });
 
